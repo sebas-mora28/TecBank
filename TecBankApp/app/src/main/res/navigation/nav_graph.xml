@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/menuFragment">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.tecbankapp.menu.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_admiActivity"
+            app:destination="@id/admiActivity" />
+        <action
+            android:id="@+id/action_menuFragment_to_clientActivity"
+            app:destination="@id/clientActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/admiActivity"
+        android:name="com.example.tecbankapp.adminView.AdmiActivity"
+        android:label="activity_admi"
+        tools:layout="@layout/activity_admi" />
+    <activity
+        android:id="@+id/clientActivity"
+        android:name="com.example.tecbankapp.clientView.ClientActivity"
+        android:label="activity_client"
+        tools:layout="@layout/activity_client" />
+</navigation>
