@@ -1,6 +1,5 @@
-package com.example.tecbankapp.clientView;
+package com.example.tecbankapp.clientView.accounts.transactions;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,19 +11,18 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.tecbankapp.R;
-import com.example.tecbankapp.databinding.FragmentAccountClientBinding;
-import com.example.tecbankapp.databinding.FragmentMenuClientBinding;
-import com.example.tecbankapp.menu.MainActivity;
+import com.example.tecbankapp.clientView.LoginFragment;
+import com.example.tecbankapp.databinding.FragmentTransactionBinding;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link AccountClientFragment#newInstance} factory method to
+ * Use the {@link TransactionFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AccountClientFragment extends Fragment {
+public class TransactionFragment extends Fragment {
 
 
-    private FragmentAccountClientBinding binding;
+    private FragmentTransactionBinding binding;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,7 +33,7 @@ public class AccountClientFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public AccountClientFragment() {
+    public TransactionFragment() {
         // Required empty public constructor
     }
 
@@ -45,11 +43,11 @@ public class AccountClientFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment AccountClientFragment.
+     * @return A new instance of fragment MovementFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static AccountClientFragment newInstance(String param1, String param2) {
-        AccountClientFragment fragment = new AccountClientFragment();
+    public static TransactionFragment newInstance(String param1, String param2) {
+        TransactionFragment fragment = new TransactionFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -70,7 +68,7 @@ public class AccountClientFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentAccountClientBinding.inflate(inflater, container, false);
+        binding  = FragmentTransactionBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
@@ -78,22 +76,39 @@ public class AccountClientFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
-        binding.transfersButton.setOnClickListener(new View.OnClickListener() {
+        binding.depositsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(AccountClientFragment.this)
-                        .navigate(R.id.action_accountClientFragment_to_transferFragment);
+
+                NavHostFragment.findNavController(TransactionFragment.this)
+                        .navigate(R.id.action_transactionFragment_to_depositFragment);
             }
         });
 
-        binding.transactionsButton.setOnClickListener(new View.OnClickListener() {
+
+        binding.retirosButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(AccountClientFragment.this)
-                        .navigate(R.id.action_accountClientFragment_to_transactionFragment);
+
+                NavHostFragment.findNavController(TransactionFragment.this)
+                        .navigate(R.id.action_transactionFragment_to_retirosFragment);
+
+
             }
         });
+
+        binding.accountsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                NavHostFragment.findNavController(TransactionFragment.this)
+                        .navigate(R.id.action_transactionFragment_to_accountFragment);
+
+            }
+        });
+
+
+
 
     }
 }
