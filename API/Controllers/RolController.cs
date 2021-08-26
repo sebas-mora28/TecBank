@@ -38,6 +38,7 @@ namespace API.Controllers
             
             if (RolService.Is_available(rol) == false)
                 return BadRequest("\tEl nombre del rol es invalido");
+            
             RolService.Add(rol);
             return CreatedAtAction(nameof(Create), rol);
         }

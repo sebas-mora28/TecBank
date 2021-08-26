@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jeyki\\OneDrive\\01. SEMESTERS\\2021 - Semestre II\\Bases de Datos\\TecBank\\API\\API.csproj": {}
+    "C:\\Users\\carlo\\OneDrive\\Escritorio\\TecBank\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jeyki\\OneDrive\\01. SEMESTERS\\2021 - Semestre II\\Bases de Datos\\TecBank\\API\\API.csproj": {
+    "C:\\Users\\carlo\\OneDrive\\Escritorio\\TecBank\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jeyki\\OneDrive\\01. SEMESTERS\\2021 - Semestre II\\Bases de Datos\\TecBank\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\carlo\\OneDrive\\Escritorio\\TecBank\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\jeyki\\OneDrive\\01. SEMESTERS\\2021 - Semestre II\\Bases de Datos\\TecBank\\API\\API.csproj",
-        "packagesPath": "C:\\Users\\jeyki\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jeyki\\OneDrive\\01. SEMESTERS\\2021 - Semestre II\\Bases de Datos\\TecBank\\API\\obj\\",
+        "projectPath": "C:\\Users\\carlo\\OneDrive\\Escritorio\\TecBank\\API\\API.csproj",
+        "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\carlo\\OneDrive\\Escritorio\\TecBank\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jeyki\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -38,6 +38,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
