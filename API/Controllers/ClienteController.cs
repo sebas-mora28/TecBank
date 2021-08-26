@@ -10,20 +10,18 @@ namespace API.Controllers
     [Route("[controller]")]
     public class ClienteController : ControllerBase
     {
-        public ClienteController()
-        {
-        }
+        public ClienteController(){}
 
         // GET all action
         [HttpGet]
         public ActionResult<List<Cliente>> GetAll() =>
             ClienteService.GetAll();
 
-        // GET by Name action
-        [HttpGet("{nombre}")]
-        public ActionResult<Cliente> Get(string nombre)
+        // GET by Cedula action
+        [HttpGet("{cedula}")]
+        public ActionResult<Cliente> Get(string cedula)
         {
-            var cliente = ClienteService.Get(nombre);
+            var cliente = ClienteService.Get(cedula);
 
             if(cliente == null)
                 return NotFound();
@@ -35,23 +33,25 @@ namespace API.Controllers
         [HttpPost]
         public IActionResult Create(Cliente cliente)
         {   
-            
-            if (ClienteService.Is_available(cliente) == false)
-                return BadRequest("\tEl nombre del cliente es invalido");
+            // No se permiten atributos cuando se crea un cliente.
+            if (ClienteService.Has_null_attributes(cliente))
+                return BadRequest("\tEs necesario que toda la informacion del cliente esté completa.");
 
-            if(!RolService.Is_available_by_name(cliente.Rol))
-                return BadRequest("\tNo existe el rol que desea asignar al cliente");
-            
+            /* Si se realiza un get con la cedula del cliente ingresado y el retorno no es nulo, 
+               significa que ya existe un cliente almacenado con esa cedula.*/
+            if (ClienteService.Get(cliente.Cedula) != null)
+                return BadRequest("\tYa existe un cliente registrado con este número de cédula.");
+
             ClienteService.Add(cliente);
             return CreatedAtAction(nameof(Create), cliente);
         }
 
         // PUT action
-        [HttpPut("{nombre}")]
-        public IActionResult Update(string nombre, Cliente cliente)
+        [HttpPut("{cedula}")]
+        public IActionResult Update(string cedula, Cliente cliente)
         {
 
-            var existing_client = ClienteService.Get(nombre);
+            var existing_client = ClienteService.Get(cedula);
             if(existing_client is null)
                 return NotFound();
 
@@ -61,15 +61,14 @@ namespace API.Controllers
         }
 
         // DELETE action
-        [HttpDelete("{nombre}")]
-        public IActionResult Delete(string nombre)
+        [HttpDelete("{cedula}")]
+        public IActionResult Delete(string cedula)
         {
-            var cliente = ClienteService.Get(nombre);
-
+            var cliente = ClienteService.Get(cedula);
             if (cliente is null)
                 return NotFound();
 
-            ClienteService.Delete(nombre);
+            ClienteService.Delete(cedula);
 
             return NoContent();
         }

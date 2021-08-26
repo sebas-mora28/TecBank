@@ -16,18 +16,20 @@ namespace API.Services
         {
             Roles = new List<Rol>();
 
+            // Proceso de deserializacion del json respectivo para clientes.
             string path = @"JSON_FILES\roles.json";
-
             string json = File.ReadAllText(path);
-
             List<Rol> rols = JsonConvert.DeserializeObject<List<Rol>>(json);
 
             foreach (Rol r in rols)
             {
-                Roles.Add(new Rol{Nombre = r.Nombre, Descripcion = r.Descripcion});
+                Roles.Add(new Rol{
+                        Nombre = r.Nombre, 
+                        Descripcion = r.Descripcion});
             }
             
         }
+
         // Obtiene todos los roles.
         public static List<Rol> GetAll() => Roles;
 
@@ -90,7 +92,12 @@ namespace API.Services
             File.WriteAllText(@"JSON_FILES\roles.json", JsonConvert.SerializeObject(Roles));
         }
 
-
+        public static bool Has_null_attributes(Rol r)
+        {
+            if (r.Nombre is null | r.Descripcion is null)
+                return true;
+            return false;
+        }
 
     }
 }
