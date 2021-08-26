@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/0db0e0ca-a8ea-4086-8b7d-b4610c4b97ee/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/TecBank",
+    "appService.deploySubpath": "publish"
+}

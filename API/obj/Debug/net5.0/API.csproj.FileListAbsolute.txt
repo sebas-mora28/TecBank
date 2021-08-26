@@ -58,3 +58,11 @@ C:\Users\carlo\OneDrive\Escritorio\TecBank\API\obj\Debug\net5.0\API.pdb
 C:\Users\carlo\OneDrive\Escritorio\TecBank\API\obj\Debug\net5.0\API.genruntimeconfig.cache
 C:\Users\carlo\OneDrive\Escritorio\TecBank\API\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\carlo\OneDrive\Escritorio\TecBank\API\bin\Debug\net5.0\JSON_FILES\roles.json
+C:\Users\carlo\OneDrive\Escritorio\TecBank\API\bin\Debug\net5.0\JSON_FILES\clientes.json
+C:\Users\carlo\OneDrive\Escritorio\TecBank\API\bin\Debug\net5.0\publish\web.config
+C:\Users\carlo\OneDrive\Escritorio\TecBank\API\bin\Debug\net5.0\publish\API.deps.json
+C:\Users\carlo\OneDrive\Escritorio\TecBank\API\bin\Debug\net5.0\publish\API.runtimeconfig.json
+C:\Users\carlo\OneDrive\Escritorio\TecBank\API\bin\Debug\net5.0\publish\appsettings.Development.json
+C:\Users\carlo\OneDrive\Escritorio\TecBank\API\bin\Debug\net5.0\publish\appsettings.json
+C:\Users\carlo\OneDrive\Escritorio\TecBank\API\bin\Debug\net5.0\publish\JSON_FILES\clientes.json
+C:\Users\carlo\OneDrive\Escritorio\TecBank\API\bin\Debug\net5.0\publish\JSON_FILES\roles.json
