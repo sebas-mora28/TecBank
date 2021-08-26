@@ -9,11 +9,18 @@ import androidx.navigation.fragment.NavHostFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.tecbankapp.R;
-import com.example.tecbankapp.databinding.FragmentLoansClientBinding;
 import com.example.tecbankapp.databinding.FragmentLoginBinding;
-import com.example.tecbankapp.menu.MenuFragment;
+
+import org.json.JSONObject;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,6 +31,8 @@ public class LoginFragment extends Fragment {
 
 
     private FragmentLoginBinding binding;
+
+    public static String user;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -68,8 +77,10 @@ public class LoginFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
+
         binding = FragmentLoginBinding.inflate(inflater, container, false);
+
         return binding.getRoot();
     }
 
@@ -80,8 +91,36 @@ public class LoginFragment extends Fragment {
         binding.enterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 NavHostFragment.findNavController(LoginFragment.this)
                         .navigate(R.id.action_loginFragment_to_menuClientFragment);
+
+                user = binding.editTextTextUser.getText().toString();
+                String password = binding.editTextTextPassword.getText().toString();
+
+
+                RequestQueue queue = Volley.newRequestQueue(getContext());
+                JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                        (Request.Method.POST, "http://10.0.2.2:3000/", null, new Response.Listener<JSONObject>() {
+
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                System.out.println(response.toString());
+
+                            }
+                        }, new Response.ErrorListener() {
+
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                System.out.println(error);
+
+                            }
+
+                        });
+
+                queue.add(jsonObjectRequest);
+
+
             }
         });
 

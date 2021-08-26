@@ -9,15 +9,31 @@
         <entry key="app/src/main/res/layout/content_admi.xml" value="0.28489583333333335" />
         <entry key="app/src/main/res/layout/content_client.xml" value="0.32760416666666664" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.28489583333333335" />
+        <entry key="app/src/main/res/layout/fragment_account.xml" value="0.34375" />
+        <entry key="app/src/main/res/layout/fragment_account_client.xml" value="0.34479166666666666" />
+        <entry key="app/src/main/res/layout/fragment_account_management.xml" value="0.34479166666666666" />
+        <entry key="app/src/main/res/layout/fragment_account_menu.xml" value="0.34479166666666666" />
+        <entry key="app/src/main/res/layout/fragment_card_client.xml" value="0.34479166666666666" />
+        <entry key="app/src/main/res/layout/fragment_card_management.xml" value="0.34479166666666666" />
         <entry key="app/src/main/res/layout/fragment_client_management.xml" value="0.264945652173913" />
+        <entry key="app/src/main/res/layout/fragment_deposit.xml" value="0.34375" />
+        <entry key="app/src/main/res/layout/fragment_depositos_list.xml" value="0.34479166666666666" />
+        <entry key="app/src/main/res/layout/fragment_deposits.xml" value="0.34375" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.20104166666666667" />
+        <entry key="app/src/main/res/layout/fragment_loans_client.xml" value="0.34479166666666666" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.36041666666666666" />
         <entry key="app/src/main/res/layout/fragment_menu.xml" value="0.3220108695652174" />
         <entry key="app/src/main/res/layout/fragment_menu_admi.xml" value="0.28489583333333335" />
         <entry key="app/src/main/res/layout/fragment_menu_client.xml" value="0.34479166666666666" />
         <entry key="app/src/main/res/layout/fragment_mora_management.xml" value="0.34479166666666666" />
+        <entry key="app/src/main/res/layout/fragment_movement.xml" value="0.24739583333333334" />
+        <entry key="app/src/main/res/layout/fragment_retiros.xml" value="0.34375" />
         <entry key="app/src/main/res/layout/fragment_role_management.xml" value="0.32760416666666664" />
+        <entry key="app/src/main/res/layout/fragment_scrolling.xml" value="0.36041666666666666" />
+        <entry key="app/src/main/res/layout/fragment_transaction.xml" value="0.34479166666666666" />
+        <entry key="app/src/main/res/layout/fragment_transfer.xml" value="0.33" />
         <entry key="app/src/main/res/menu/menu_main.xml" value="0.25833333333333336" />
+        <entry key="app/src/main/res/xml/network_security_config.xml" value="0.15104166666666666" />
       </map>
     </option>
   </component>

@@ -1,0 +1,15 @@
+<ul *ngIf = "in_login('/login') && in_login('/about')">
+    <li><a routerLink="/login">General</a></li>
+
+    <li *ngIf = "is_admin()"><a routerLink="/asesores">Asesores</a></li>
+    <li *ngIf = "is_admin()"><a routerLink="/clientes">Clientes</a></li>
+    <li *ngIf = "is_admin()"><a routerLink="/cuentas">Cuentas</a></li>
+    <li *ngIf = "is_admin()"><a routerLink="/roles">Roles</a></li>
+    <li *ngIf = "is_admin()"><a routerLink="/tarjetas">Tarjetas</a></li>
+
+    <li *ngIf = "is_client()"><a routerLink="/miscuentas">Mis Cuentas</a></li>
+    <li *ngIf = "is_client()"><a routerLink="/mistarjetas">Mis Tarjetas</a></li>
+    <li *ngIf = "is_client()"><a routerLink="/misprestamos">Mis prestamos</a></li>
+    <li *ngIf = "is_client()"><a routerLink="/mora">Mora</a></li>
+
+</ul>

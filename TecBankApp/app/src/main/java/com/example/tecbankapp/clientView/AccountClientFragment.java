@@ -1,14 +1,20 @@
 package com.example.tecbankapp.clientView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.tecbankapp.R;
+import com.example.tecbankapp.databinding.FragmentAccountClientBinding;
+import com.example.tecbankapp.databinding.FragmentMenuClientBinding;
+import com.example.tecbankapp.menu.MainActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +22,9 @@ import com.example.tecbankapp.R;
  * create an instance of this fragment.
  */
 public class AccountClientFragment extends Fragment {
+
+
+    private FragmentAccountClientBinding binding;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +70,30 @@ public class AccountClientFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_account_client, container, false);
+        binding = FragmentAccountClientBinding.inflate(inflater, container, false);
+        return binding.getRoot();
+    }
+
+
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
+        binding.transfersButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(AccountClientFragment.this)
+                        .navigate(R.id.action_accountClientFragment_to_transferFragment);
+            }
+        });
+
+        binding.transactionsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(AccountClientFragment.this)
+                        .navigate(R.id.action_accountClientFragment_to_transactionFragment);
+            }
+        });
+
     }
 }
