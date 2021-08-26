@@ -1,6 +1,5 @@
-package com.example.tecbankapp.clientView;
+package com.example.tecbankapp.clientView.accounts;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,8 +12,6 @@ import android.view.ViewGroup;
 
 import com.example.tecbankapp.R;
 import com.example.tecbankapp.databinding.FragmentAccountClientBinding;
-import com.example.tecbankapp.databinding.FragmentMenuClientBinding;
-import com.example.tecbankapp.menu.MainActivity;
 
 /**
  * A simple {@link Fragment} subclass.

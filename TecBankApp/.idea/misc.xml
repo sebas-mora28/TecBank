@@ -20,6 +20,7 @@
         <entry key="app/src/main/res/layout/fragment_depositos_list.xml" value="0.34479166666666666" />
         <entry key="app/src/main/res/layout/fragment_deposits.xml" value="0.34375" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.20104166666666667" />
+        <entry key="app/src/main/res/layout/fragment_loan_payment.xml" value="0.2828125" />
         <entry key="app/src/main/res/layout/fragment_loans_client.xml" value="0.34479166666666666" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.36041666666666666" />
         <entry key="app/src/main/res/layout/fragment_menu.xml" value="0.3220108695652174" />
@@ -27,6 +28,7 @@
         <entry key="app/src/main/res/layout/fragment_menu_client.xml" value="0.34479166666666666" />
         <entry key="app/src/main/res/layout/fragment_mora_management.xml" value="0.34479166666666666" />
         <entry key="app/src/main/res/layout/fragment_movement.xml" value="0.24739583333333334" />
+        <entry key="app/src/main/res/layout/fragment_purchases.xml" value="0.3523550724637681" />
         <entry key="app/src/main/res/layout/fragment_retiros.xml" value="0.34375" />
         <entry key="app/src/main/res/layout/fragment_role_management.xml" value="0.32760416666666664" />
         <entry key="app/src/main/res/layout/fragment_scrolling.xml" value="0.36041666666666666" />
