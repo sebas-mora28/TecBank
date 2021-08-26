@@ -1,4 +1,4 @@
 
 API/bin/
-API/bin/Debug/net5.0/API.dll
 *.dll
+API/obj/
