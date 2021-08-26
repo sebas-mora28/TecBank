@@ -7,30 +7,17 @@ using System;
 using System.IO;
 using System.Text;
 
+
+
 namespace API.Services
 {
     public static class ClienteService
     {
         static List<Cliente> Clientes { get; }
+        static string nombreDB = "clientes";
         static ClienteService()
         {
-            Clientes = new List<Cliente>();
-
-            // Proceso de deserializacion del json respectivo para clientes.
-            string path = @"JSON_FILES\clientes.json";
-            string json = File.ReadAllText(path);
-            List<Cliente> clientes = JsonConvert.DeserializeObject<List<Cliente>>(json);
-
-            foreach (Cliente c in clientes)
-            {
-                Clientes.Add(new Cliente{
-                        Nombre_Completo = c.Nombre_Completo, 
-                        Cedula = c.Cedula,
-                        Direccion = c.Direccion,
-                        Telefono = c.Telefono,
-                        Ingreso_Mensual = c.Ingreso_Mensual,
-                        Tipo = c.Tipo});
-            }
+            Clientes = JsonConvert.DeserializeObject<List<Cliente>>(JSONManager.loadDB_string(nombreDB));
         }
 
         // Obtiene todos los clientes.

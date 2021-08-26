@@ -12,22 +12,11 @@ namespace API.Services
     public static class RolService
     {
         static List<Rol> Roles { get; }
+        static string nombreDB = "roles";
+        
         static RolService()
         {
-            Roles = new List<Rol>();
-
-            // Proceso de deserializacion del json respectivo para clientes.
-            string path = @"JSON_FILES\roles.json";
-            string json = File.ReadAllText(path);
-            List<Rol> rols = JsonConvert.DeserializeObject<List<Rol>>(json);
-
-            foreach (Rol r in rols)
-            {
-                Roles.Add(new Rol{
-                        Nombre = r.Nombre, 
-                        Descripcion = r.Descripcion});
-            }
-            
+            Roles = JsonConvert.DeserializeObject<List<Rol>>(JSONManager.loadDB_string(nombreDB));
         }
 
         // Obtiene todos los roles.
