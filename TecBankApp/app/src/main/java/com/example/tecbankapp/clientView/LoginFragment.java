@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -92,33 +94,50 @@ public class LoginFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                NavHostFragment.findNavController(LoginFragment.this)
-                        .navigate(R.id.action_loginFragment_to_menuClientFragment);
-
                 user = binding.editTextTextUser.getText().toString();
                 String password = binding.editTextTextPassword.getText().toString();
 
 
-                RequestQueue queue = Volley.newRequestQueue(getContext());
-                JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                        (Request.Method.POST, "http://10.0.2.2:3000/", null, new Response.Listener<JSONObject>() {
+                if (user.equals("")){
+                    Toast.makeText(getContext(), "Ingrese un usuario", Toast.LENGTH_SHORT).show();
+                }
+                else if (password.equals("")){
+                    Toast.makeText(getContext(), "Ingrese una contraseña", Toast.LENGTH_SHORT).show();
+                }
+                else {
 
-                            @Override
-                            public void onResponse(JSONObject response) {
-                                System.out.println(response.toString());
+                    NavHostFragment.findNavController(LoginFragment.this)
+                            .navigate(R.id.action_loginFragment_to_menuClientFragment);
 
-                            }
-                        }, new Response.ErrorListener() {
+                    RequestQueue queue = Volley.newRequestQueue(getContext());
+                    JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                            (Request.Method.POST, "http://10.0.2.2:3000/", null, new Response.Listener<JSONObject>() {
 
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                System.out.println(error);
+                                @Override
+                                public void onResponse(JSONObject response) {
+                                    System.out.println(response.toString());
 
-                            }
+                                }
+                            }, new Response.ErrorListener() {
 
-                        });
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    System.out.println(error);
 
-                queue.add(jsonObjectRequest);
+                                }
+
+                            });
+
+                    queue.add(jsonObjectRequest);
+
+
+
+
+
+                }
+
+
+
 
 
             }

@@ -1,14 +1,22 @@
-package com.example.tecbankapp.clientView;
+package com.example.tecbankapp.clientView.loans;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 
 import com.example.tecbankapp.R;
+import com.example.tecbankapp.clientView.LoginFragment;
+import com.example.tecbankapp.databinding.FragmentLoansClientBinding;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +24,8 @@ import com.example.tecbankapp.R;
  * create an instance of this fragment.
  */
 public class LoansClientFragment extends Fragment {
+
+    private FragmentLoansClientBinding binding;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +71,42 @@ public class LoansClientFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_loans_client, container, false);
+        binding = FragmentLoansClientBinding.inflate(inflater, container, false);
+
+        ArrayList<String> list = new ArrayList<>();
+        for (int i=0; i < 30; i++)
+        {
+            list.add(Integer.toString(i) + "  hola");
+        }
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, list);
+
+        binding.listLoans.setAdapter(arrayAdapter);
+        binding.listLoans.setClickable(true);
+
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        binding.listLoans.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                System.out.println(i);
+
+                Object item = adapterView.getItemAtPosition(i);
+
+                NavHostFragment.findNavController(LoansClientFragment.this)
+                        .navigate(R.id.action_loansClientFragment_to_loanPaymentFragment);
+
+
+            }
+        });
+
+
+
     }
 }
