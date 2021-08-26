@@ -20,7 +20,7 @@ namespace API.Models
 
         public IList<string> Cuentas{get;set;}
 
-        public IList<string> Prestamos{get;set;} 
+        public IList<Prestamo> Prestamos{get;set;} 
         
 
     }

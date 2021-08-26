@@ -1,10 +1,10 @@
 TECBANK SERVICES REQUESTS:
 
-[IMPORTANTE]
+[IMPORTANTE][IMPORTANTE][IMPORTANTE][IMPORTANTE][IMPORTANTE][IMPORTANTE][IMPORTANTE][IMPORTANTE][IMPORTANTE][IMPORTANTE][IMPORTANTE][IMPORTANTE][IMPORTANTE]
 
 CAMBIAR localhost:5000 por tecbank.azurewebsites.net para utilizar la API desde AZURE.
 
-[IMPORTANTE]
+[IMPORTANTE][IMPORTANTE][IMPORTANTE][IMPORTANTE][IMPORTANTE][IMPORTANTE][IMPORTANTE][IMPORTANTE][IMPORTANTE][IMPORTANTE][IMPORTANTE][IMPORTANTE][IMPORTANTE]
 
 ROLES:
 
@@ -40,3 +40,46 @@ GET  - http://localhost:5000/cliente/{CEDULA CLIENTE}   ->   GET       ->   DEVU
 DEL  - http://localhost:5000/cliente/{CEDULA CLIENTE}   ->   DELETE    ->   BORRA EL CLIENTE {CEDULA CLIENTE} DE LA DB
 POST - http://localhost:5000/cliente  		        ->   CREATE    ->   [SE DEBE ENVIAR UN JSON]CREA UN NUEVO CLIENTE
 PUT  - http://localhost:5000/cliente/{CLIENTE CLIENTE}   ->   UPDATE    ->   [SE DEBE ENVIAR UN JSON]ACTUALIZA UN CLIENTE
+
+
+CUENTAS:
+
+FORMATO DE JSON:
+{
+  "Numero_Cuenta": "1234",
+  "Descripcion": "VISA",
+  "Moneda": "Colones",
+  "Tipo": "Ahorros",
+  "Cliente_Propietario": "604530340",
+  "Tarjetas": [
+    "1111",
+    "2222"
+  ]
+}
+
+GET  - http://localhost:5000/cuenta/ 	         	->   GET ALL   ->   DEVUELVE UN JSON CON TODAS LAS CUENTAS
+GET  - http://localhost:5000/cuenta/{NUMERO DE CUENTA}  ->   GET       ->   DEVUELVE UN JSON CON LA CUENTA SOLICITADA
+DEL  - http://localhost:5000/cuenta/{NUMERO DE CUENTA}  ->   DELETE    ->   BORRA LA CUENTA {NUMERO DE CUENTA} DE LA DB
+POST - http://localhost:5000/cuenta  		        ->   CREATE    ->   [SE DEBE ENVIAR UN JSON]CREA UNA NUEVA CUENTA
+PUT  - http://localhost:5000/cuenta/{NUMERO DE CUENTA}  ->   UPDATE    ->   [SE DEBE ENVIAR UN JSON]ACTUALIZA UNA CUENTA
+
+
+TARJETAS:
+
+FORMATO DE JSON:
+{
+  "Numero_de_tarjeta": "11-11-11",
+  "Fecha_de_expiracion": "11/02/2021",
+  "Codigo_de_Seguridad": "135",
+  "Tipo": "Debito",
+  "Saldo_Disponible": 5000000,
+  "Monto_de_credito": 40000,
+  "Numero_Cuenta": "1234"
+}
+
+GET  - http://localhost:5000/tarjeta/ 	         	  ->   GET ALL   ->   DEVUELVE UN JSON CON TODAS LAS TARJETAS
+GET  - http://localhost:5000/tarjeta/{NUMERO DE TARJETA}  ->   GET       ->   DEVUELVE UN JSON CON LA TARJETA SOLICITADA
+DEL  - http://localhost:5000/tarjeta/{NUMERO DE TARJETA}  ->   DELETE    ->   BORRA LA TARJETA {NUMERO DE TARJETA} DE LA DB
+POST - http://localhost:5000/tarjeta  		          ->   CREATE    ->   [SE DEBE ENVIAR UN JSON]CREA UNA NUEVA TARJETA
+PUT  - http://localhost:5000/tarjeta/{NUMERO DE TARJETA}  ->   UPDATE    ->   [SE DEBE ENVIAR UN JSON]ACTUALIZA UNA TARJETA
+
