@@ -1,0 +1,42 @@
+TECBANK SERVICES REQUESTS:
+
+[IMPORTANTE]
+
+CAMBIAR localhost:5000 por tecbank.azurewebsites.net para utilizar la API desde AZURE.
+
+[IMPORTANTE]
+
+ROLES:
+
+FORMATO DE JSON:
+{
+	"nombre": "Guarda",
+	"descripcion": "cuida"
+} 
+
+GET  - http://localhost:5000/rol                 ->   GET ALL   ->   DEVUELVE UN JSON CON TODOS LOS ROLES
+GET  - http://localhost:5000/rol/{NOMBRE ROL}    ->   GET 	->   DEVUELVE UN JSON CON EL ROL SOLICITADO
+DEL  - http://localhost:5000/rol/{NOMBRE ROL}    ->   DELETE    ->   BORRA EL ROL {NOMBRE ROL} DE LA DB
+POST - http://localhost:5000/rol  		 ->   CREATE    ->   [SE DEBE ENVIAR UN JSON]CREA UN NUEVO ROL
+PUT  - http://localhost:5000/rol/{NOMBRE ROL}    ->   UPDATE	->   [SE DEBE ENVIAR UN JSON]ACTUALIZA UN ROL 
+
+
+CLIENTES:
+
+FORMATO DE JSON:
+{
+	"nombre_Completo": "Shakime Richards Sparks",
+        "cedula": "117920956",
+        "direccion": "Guadalupe, San Jose",
+        "telefono": "+50672802533",
+        "ingreso_Mensual": 1000000,
+        "tipo_de_cliente": "fisico",
+        "password": "1234",
+        "usuario": "shaq"
+}
+
+GET  - http://localhost:5000/cliente/ 	         	->   GET ALL   ->   DEVUELVE UN JSON CON TODOS LOS CLIENTES
+GET  - http://localhost:5000/cliente/{CEDULA CLIENTE}   ->   GET       ->   DEVUELVE UN JSON CON EL CLIENTE SOLICITADO
+DEL  - http://localhost:5000/cliente/{CEDULA CLIENTE}   ->   DELETE    ->   BORRA EL CLIENTE {CEDULA CLIENTE} DE LA DB
+POST - http://localhost:5000/cliente  		        ->   CREATE    ->   [SE DEBE ENVIAR UN JSON]CREA UN NUEVO CLIENTE
+PUT  - http://localhost:5000/cliente/{CLIENTE CLIENTE}   ->   UPDATE    ->   [SE DEBE ENVIAR UN JSON]ACTUALIZA UN CLIENTE

@@ -56,10 +56,14 @@ namespace API.Controllers
         {
 
             var existing_rol = RolService.Get(nombre);
+
+
             if(existing_rol is null)
                 return NotFound();
 
-            RolService.Update(rol);           
+            
+            RolService.Delete(nombre);
+            RolService.Add(rol);       
 
             return NoContent();
         }
