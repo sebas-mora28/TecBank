@@ -60,3 +60,4 @@ C:\Users\carlo\OneDrive\Escritorio\TecBank\API\bin\Debug\net5.0\Newtonsoft.Json.
 C:\Users\carlo\OneDrive\Escritorio\TecBank\API\bin\Debug\net5.0\JSON_FILES\roles.json
 C:\Users\jeyki\OneDrive\01. SEMESTERS\2021 - Semestre II\Bases de Datos\TecBank\API\bin\Debug\net5.0\JSON_FILES\roles.json
 C:\Users\jeyki\OneDrive\01. SEMESTERS\2021 - Semestre II\Bases de Datos\TecBank\API\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\jeyki\OneDrive\01. SEMESTERS\2021 - Semestre II\Bases de Datos\TecBank\API\bin\Debug\net5.0\JSON_FILES\clientes.json
