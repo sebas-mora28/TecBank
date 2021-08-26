@@ -35,13 +35,20 @@ namespace API.Controllers
         [HttpPost]
         public IActionResult Create(Rol rol)
         {   
-            
-            if (RolService.Is_available(rol) == false)
-                return BadRequest("\tEl nombre del rol es invalido");
+            // No se permiten atributos cuando se crea un cliente.
+            if (RolService.Has_null_attributes(rol))
+                return BadRequest("\tEs necesario que toda la informacion del rol esté completa.");
+
+            /* Si se realiza un get con el nombre del rol ingresado y el retorno no es nulo, 
+               significa que ya el nombre del rol se encuentra en uso.*/
+            if (RolService.Get(rol.Nombre) != null)
+                return BadRequest("\tEste nombre de rol ya se encuentra en uso.");
             
             RolService.Add(rol);
             return CreatedAtAction(nameof(Create), rol);
         }
+
+
 
         // PUT action
         [HttpPut("{nombre}")]
