@@ -37,6 +37,10 @@ namespace API.Controllers
             if (ClienteService.Has_null_attributes(cliente))
                 return BadRequest("\tEs necesario que toda la informacion del cliente esté completa.");
 
+            // Solo se permite cliente de tipo fisico o juridico.
+            if (ClienteService.Has_incorrect_client_type(cliente))
+                return BadRequest("\tEl tipo del cliente solo puede ser Físico o Juridico.");
+
             /* Si se realiza un get con la cedula del cliente ingresado y el retorno no es nulo, 
                significa que ya existe un cliente almacenado con esa cedula.*/
             if (ClienteService.Get(cliente.Cedula) != null)

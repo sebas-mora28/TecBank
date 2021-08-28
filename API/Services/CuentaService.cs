@@ -67,8 +67,7 @@ namespace API.Services
                     c.Descripcion is null |
                     c.Moneda is null |
                     c.Tipo is null |
-                    c.Cliente_Propietario is null|
-                    c.Tarjetas is null)
+                    c.Cliente_Propietario is null)
                 return true;
             return false;
         }

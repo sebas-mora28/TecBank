@@ -29,7 +29,7 @@ namespace API.Services
 
         // Agrega un nuevo cliente a la lista de clientes.
         public static void Add(Cliente cliente)
-        {   
+        {
             Clientes.Add(cliente);
             UpdateJson();
         }
@@ -38,18 +38,18 @@ namespace API.Services
         public static void Delete(string nombre)
         {
             var cliente = Get(nombre);
-            if(cliente is null)
+            if (cliente is null)
                 return;
 
             Clientes.Remove(cliente);
             UpdateJson();
-        }                    
+        }
 
         // Modifica un cliente de la lista de clientes.
         public static void Update(Cliente cliente)
         {
             var index = Clientes.FindIndex(p => p.Cedula == cliente.Cedula);
-            if(index == -1)
+            if (index == -1)
                 return;
             Clientes[index] = cliente;
             UpdateJson();
@@ -57,7 +57,7 @@ namespace API.Services
 
         public static void UpdateJson()
         {
-            File.WriteAllText(@"JSON_FILES\"+nombreDB+".json", JsonConvert.SerializeObject(Clientes));
+            File.WriteAllText(@"JSON_FILES\" + nombreDB + ".json", JsonConvert.SerializeObject(Clientes));
         }
 
 
@@ -70,13 +70,19 @@ namespace API.Services
                     c.Ingreso_Mensual is 0 |
                     c.Tipo_de_cliente is null |
                     c.Usuario is null |
-                    c.Password is null |
-                    c.Cuentas is null |
-                    c.Prestamos is null)
+                    c.Password is null)
                 return true;
             return false;
         }
 
-
+        public static bool Has_incorrect_client_type(Cliente c)
+        {
+            if (c.Tipo_de_cliente.ToLower().Equals("fisico") |
+                c.Tipo_de_cliente.ToLower().Equals("físico") |
+                c.Tipo_de_cliente.ToLower().Equals("juridico") |
+                c.Tipo_de_cliente.ToLower().Equals("jurídico"))
+                return false;
+            return true;
+        }
     }
 }

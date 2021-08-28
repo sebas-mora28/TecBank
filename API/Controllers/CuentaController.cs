@@ -34,8 +34,8 @@ namespace API.Controllers
         public IActionResult Create(Cuenta cuenta)
         {   
             // No se permiten atributos cuando se crea un cuenta.
-            if (CuentaService.Has_null_attributes(cuenta))
-                return BadRequest("\tEs necesario que toda la informacion del cuenta esté completa.");
+            // if (CuentaService.Has_null_attributes(cuenta))
+            //     return BadRequest("\tEs necesario que toda la informacion del cuenta esté completa.");
 
             /* Si se realiza un get con la Numero_Cuenta del cuenta ingresado y el retorno no es nulo, 
                significa que ya existe un cuenta almacenado con esa Numero_Cuenta.*/
