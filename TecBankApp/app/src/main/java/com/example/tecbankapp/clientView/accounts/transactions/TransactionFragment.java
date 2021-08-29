@@ -97,12 +97,12 @@ public class TransactionFragment extends Fragment {
             }
         });
 
-        binding.accountsButton.setOnClickListener(new View.OnClickListener() {
+        binding.cardsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 NavHostFragment.findNavController(TransactionFragment.this)
-                        .navigate(R.id.action_transactionFragment_to_accountFragment);
+                        .navigate(R.id.action_transactionFragment_to_cardsFragment);
 
             }
         });

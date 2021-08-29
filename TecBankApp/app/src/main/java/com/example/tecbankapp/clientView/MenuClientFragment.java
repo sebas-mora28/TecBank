@@ -10,6 +10,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CalendarView;
 
 import com.example.tecbankapp.R;
 import com.example.tecbankapp.databinding.FragmentMenuClientBinding;
@@ -84,21 +85,15 @@ public class MenuClientFragment extends Fragment {
             }
         });
 
-        binding.loansButton.setOnClickListener(new View.OnClickListener() {
+        binding.transfersButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(MenuClientFragment.this)
-                        .navigate(R.id.action_menuClientFragment_to_loansClientFragment);
+                        .navigate(R.id.action_menuClientFragment_to_transferFragment);
+
             }
         });
 
-        binding.cardsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(MenuClientFragment.this)
-                        .navigate(R.id.action_menuClientFragment_to_cardClientFragment);
-            }
-        });
 
         binding.backClientButton.setOnClickListener(new View.OnClickListener() {
             @Override

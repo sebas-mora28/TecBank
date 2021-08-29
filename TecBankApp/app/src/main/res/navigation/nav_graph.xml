@@ -15,43 +15,16 @@
             app:destination="@id/menuClientFragment" />
     </fragment>
     <fragment
-        android:id="@+id/loansClientFragment"
-        android:name="com.example.tecbankapp.clientView.loans.LoansClientFragment"
-        android:label="fragment_loans_client"
-        tools:layout="@layout/fragment_loans_client" >
-        <action
-            android:id="@+id/action_loansClientFragment_to_menuClientFragment"
-            app:destination="@id/menuClientFragment" />
-        <action
-            android:id="@+id/action_loansClientFragment_to_loanPaymentFragment"
-            app:destination="@id/loanPaymentFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/cardClientFragment"
-        android:name="com.example.tecbankapp.clientView.cards.CardClientFragment"
-        android:label="fragment_card_client"
-        tools:layout="@layout/fragment_card_client" >
-        <action
-            android:id="@+id/action_cardClientFragment_to_menuClientFragment"
-            app:destination="@id/menuClientFragment" />
-        <action
-            android:id="@+id/action_cardClientFragment_to_purchasesFragment"
-            app:destination="@id/purchasesFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/menuClientFragment"
         android:name="com.example.tecbankapp.clientView.MenuClientFragment"
         android:label="fragment_menu_client"
         tools:layout="@layout/fragment_menu_client" >
         <action
-            android:id="@+id/action_menuClientFragment_to_loansClientFragment"
-            app:destination="@id/loansClientFragment" />
-        <action
-            android:id="@+id/action_menuClientFragment_to_cardClientFragment"
-            app:destination="@id/cardClientFragment" />
-        <action
             android:id="@+id/action_menuClientFragment_to_accountClientFragment"
             app:destination="@id/accountClientFragment" />
+        <action
+            android:id="@+id/action_menuClientFragment_to_transferFragment"
+            app:destination="@id/transferFragment" />
     </fragment>
     <fragment
         android:id="@+id/transactionFragment"
@@ -68,17 +41,8 @@
             android:id="@+id/action_transactionFragment_to_retirosFragment"
             app:destination="@id/retirosFragment" />
         <action
-            android:id="@+id/action_transactionFragment_to_accountFragment"
-            app:destination="@id/accountFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/transferFragment"
-        android:name="com.example.tecbankapp.clientView.accounts.TransferFragment"
-        android:label="fragment_transfer"
-        tools:layout="@layout/fragment_transfer" >
-        <action
-            android:id="@+id/action_transferFragment_to_accountClientFragment"
-            app:destination="@id/accountClientFragment" />
+            android:id="@+id/action_transactionFragment_to_cardsFragment"
+            app:destination="@id/cardsFragment" />
     </fragment>
     <fragment
         android:id="@+id/accountClientFragment"
@@ -88,9 +52,6 @@
         <action
             android:id="@+id/action_accountClientFragment_to_transactionFragment"
             app:destination="@id/transactionFragment" />
-        <action
-            android:id="@+id/action_accountClientFragment_to_transferFragment"
-            app:destination="@id/transferFragment" />
     </fragment>
     <fragment
         android:id="@+id/depositFragment"
@@ -111,30 +72,21 @@
             app:destination="@id/transactionFragment" />
     </fragment>
     <fragment
-        android:id="@+id/loanPaymentFragment"
-        android:name="com.example.tecbankapp.clientView.loans.LoanPaymentFragment"
-        android:label="fragment_loan_payment"
-        tools:layout="@layout/fragment_loan_payment" >
+        android:id="@+id/transferFragment"
+        android:name="com.example.tecbankapp.clientView.accounts.TransferFragment"
+        android:label="fragment_transfer"
+        tools:layout="@layout/fragment_transfer" >
         <action
-            android:id="@+id/action_loanPaymentFragment_to_loansClientFragment"
-            app:destination="@id/loansClientFragment" />
+            android:id="@+id/action_transferFragment_to_menuClientFragment"
+            app:destination="@id/menuClientFragment" />
     </fragment>
     <fragment
-        android:id="@+id/accountFragment"
-        android:name="com.example.tecbankapp.clientView.accounts.transactions.AccountFragment"
-        android:label="fragment_account"
-        tools:layout="@layout/fragment_account" >
+        android:id="@+id/cardsFragment"
+        android:name="com.example.tecbankapp.clientView.accounts.transactions.CardsFragment"
+        android:label="fragment_cards"
+        tools:layout="@layout/fragment_cards" >
         <action
-            android:id="@+id/action_accountFragment_to_transactionFragment"
+            android:id="@+id/action_cardsFragment_to_transactionFragment"
             app:destination="@id/transactionFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/purchasesFragment"
-        android:name="com.example.tecbankapp.clientView.cards.PurchasesFragment"
-        android:label="fragment_purchases"
-        tools:layout="@layout/fragment_purchases" >
-        <action
-            android:id="@+id/action_purchasesFragment_to_cardClientFragment"
-            app:destination="@id/cardClientFragment" />
     </fragment>
 </navigation>

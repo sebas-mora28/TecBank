@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -22,6 +23,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -78,6 +80,17 @@ public class TransferFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentTransferBinding.inflate(inflater, container, false);
+
+        ArrayList<String> list = new ArrayList<>();
+        for(int i=0; i<5; i++){
+            list.add(Integer.toString(i) + "232332323 43434");
+
+        }
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, list);
+
+        binding.debitAccountOption.setAdapter(arrayAdapter);
+
         return binding.getRoot();
     }
 

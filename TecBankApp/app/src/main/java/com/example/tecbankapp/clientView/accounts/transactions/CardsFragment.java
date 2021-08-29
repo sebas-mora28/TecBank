@@ -15,20 +15,18 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.tecbankapp.R;
-import com.example.tecbankapp.databinding.FragmentAccountBinding;
-import com.example.tecbankapp.databinding.FragmentAccountClientBinding;
+import com.example.tecbankapp.databinding.FragmentCardsBinding;
 
 import org.json.JSONObject;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link AccountFragment#newInstance} factory method to
+ * Use the {@link CardsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AccountFragment extends Fragment {
+public class CardsFragment extends Fragment {
 
-    private FragmentAccountBinding binding;
+    private FragmentCardsBinding binding;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -39,7 +37,7 @@ public class AccountFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public AccountFragment() {
+    public CardsFragment() {
         // Required empty public constructor
     }
 
@@ -52,8 +50,8 @@ public class AccountFragment extends Fragment {
      * @return A new instance of fragment AccountFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static AccountFragment newInstance(String param1, String param2) {
-        AccountFragment fragment = new AccountFragment();
+    public static CardsFragment newInstance(String param1, String param2) {
+        CardsFragment fragment = new CardsFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -74,7 +72,7 @@ public class AccountFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentAccountBinding.inflate(inflater, container, false);
+        binding = FragmentCardsBinding.inflate(inflater, container, false);
 
         return binding.getRoot();
     }

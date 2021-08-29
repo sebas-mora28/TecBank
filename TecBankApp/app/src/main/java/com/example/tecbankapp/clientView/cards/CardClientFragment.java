@@ -79,14 +79,6 @@ public class CardClientFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-        biding.purchaseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                NavHostFragment.findNavController(CardClientFragment.this)
-                        .navigate(R.id.action_cardClientFragment_to_purchasesFragment);
-            }
-        });
 
     }
 }

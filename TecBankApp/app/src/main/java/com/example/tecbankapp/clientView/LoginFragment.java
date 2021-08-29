@@ -111,11 +111,11 @@ public class LoginFragment extends Fragment {
 
                     RequestQueue queue = Volley.newRequestQueue(getContext());
                     JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                            (Request.Method.POST, "http://10.0.2.2:3000/", null, new Response.Listener<JSONObject>() {
+                            (Request.Method.GET, "https://tecbank.azurewebsites.net/rol", null, new Response.Listener<JSONObject>() {
 
                                 @Override
                                 public void onResponse(JSONObject response) {
-                                    System.out.println(response.toString());
+                                    System.out.println(response);
 
                                 }
                             }, new Response.ErrorListener() {

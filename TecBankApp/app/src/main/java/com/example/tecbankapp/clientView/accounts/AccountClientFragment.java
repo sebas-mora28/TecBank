@@ -9,9 +9,15 @@ import androidx.navigation.fragment.NavHostFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 
 import com.example.tecbankapp.R;
+import com.example.tecbankapp.clientView.LoginFragment;
 import com.example.tecbankapp.databinding.FragmentAccountClientBinding;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -68,6 +74,17 @@ public class AccountClientFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentAccountClientBinding.inflate(inflater, container, false);
+
+        ArrayList<String> list = new ArrayList<>();
+        for (int i=0; i < 30; i++)
+        {
+            list.add(Integer.toString(i) + "  hola");
+        }
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, list);
+
+        binding.accountsList.setAdapter(arrayAdapter);
+        binding.accountsList.setClickable(true);
         return binding.getRoot();
     }
 
@@ -76,21 +93,21 @@ public class AccountClientFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-        binding.transfersButton.setOnClickListener(new View.OnClickListener() {
+        binding.accountsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+
                 NavHostFragment.findNavController(AccountClientFragment.this)
-                        .navigate(R.id.action_accountClientFragment_to_transferFragment);
+                        .navigate(R.id.action_accountClientFragment_to_transactionFragment);
+
+
+
             }
         });
 
-        binding.transactionsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(AccountClientFragment.this)
-                        .navigate(R.id.action_accountClientFragment_to_transactionFragment);
-            }
-        });
+
+
 
     }
 }

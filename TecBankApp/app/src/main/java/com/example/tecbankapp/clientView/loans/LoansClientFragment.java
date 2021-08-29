@@ -99,9 +99,6 @@ public class LoansClientFragment extends Fragment {
 
                 Object item = adapterView.getItemAtPosition(i);
 
-                NavHostFragment.findNavController(LoansClientFragment.this)
-                        .navigate(R.id.action_loansClientFragment_to_loanPaymentFragment);
-
 
             }
         });

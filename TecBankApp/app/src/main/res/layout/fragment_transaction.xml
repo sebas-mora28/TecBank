@@ -35,12 +35,12 @@
             app:layout_constraintTop_toBottomOf="@+id/deposits_button" />
 
         <Button
-            android:id="@+id/accounts_button"
+            android:id="@+id/cards_button"
             android:layout_width="243dp"
             android:layout_height="63dp"
             android:layout_marginStart="72dp"
             android:layout_marginTop="68dp"
-            android:text="Cuentas"
+            android:text="Tarjetas"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"

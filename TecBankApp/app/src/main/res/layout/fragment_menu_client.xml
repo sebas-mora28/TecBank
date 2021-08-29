@@ -26,28 +26,18 @@
             android:layout_width="330dp"
             android:layout_height="54dp"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="184dp"
+            android:layout_marginTop="212dp"
             android:text="Cuentas"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/loans_button"
+            android:id="@+id/transfers_button"
             android:layout_width="330dp"
             android:layout_height="54dp"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="36dp"
-            android:text="Prestamos"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cards_button" />
-
-        <Button
-            android:id="@+id/cards_button"
-            android:layout_width="330dp"
-            android:layout_height="54dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="36dp"
-            android:text="Tarjetas"
+            android:layout_marginTop="72dp"
+            android:text="Tranferencias"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/account_button" />
     </androidx.constraintlayout.widget.ConstraintLayout>

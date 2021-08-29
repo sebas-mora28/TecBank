@@ -173,16 +173,16 @@ public class PurchasesFragment extends Fragment implements DatePickerDialog.OnDa
 
 
         if(fromDate){
-            from_day = i;
-            from_month = i1;
-            from_year = i2;
-            binding.fromText.setText(i2 + " / " + i1 + " / " + i);
+            from_day = i2;
+            from_month = i1 + 1;
+            from_year = i;
+            binding.fromText.setText(from_day + " / " + from_month + " / " + from_year);
 
         }else{
-            to_day = i;
-            to_month =i1;
-            to_year = i2;
-            binding.toText.setText(i2 + " / " + i1 + " / " + i);
+            to_day = i2;
+            to_month =i1 + 1;
+            to_year = i;
+            binding.toText.setText(to_day + " / " + to_month + " / " + to_year);
         }
 
     }
