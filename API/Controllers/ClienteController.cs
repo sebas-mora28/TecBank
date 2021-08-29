@@ -23,11 +23,12 @@ namespace API.Controllers
         {
             var cliente = ClienteService.Get(cedula);
 
-            if(cliente == null)
+            if (cliente == null)
                 return NotFound();
 
             return cliente;
         }
+
 
         // POST action
         [HttpPost]
@@ -45,6 +46,12 @@ namespace API.Controllers
                significa que ya existe un cliente almacenado con esa cedula.*/
             if (ClienteService.Get(cliente.Cedula) != null)
                 return BadRequest("\tYa existe un cliente registrado con este número de cédula.");
+
+            // Inicializar atributos de listas, para evitar errores.
+            if (cliente.Telefonos is null)
+                cliente.Telefonos = new List<string>();
+            if (cliente.Prestamos is null)
+                cliente.Prestamos = new List<Prestamo>();
 
             ClienteService.Add(cliente);
             return CreatedAtAction(nameof(Create), cliente);

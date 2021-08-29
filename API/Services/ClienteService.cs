@@ -57,7 +57,8 @@ namespace API.Services
 
         public static void UpdateJson()
         {
-            File.WriteAllText(@"JSON_FILES\" + nombreDB + ".json", JsonConvert.SerializeObject(Clientes));
+            string text = JsonConvert.SerializeObject(Clientes, Formatting.Indented);
+            File.WriteAllText(@"JSON_FILES\" + nombreDB + ".json", text);
         }
 
 
@@ -66,12 +67,12 @@ namespace API.Services
             if (c.Nombre_Completo is null |
                     c.Cedula is null |
                     c.Direccion is null |
-                    c.Telefonos is null |
                     c.Ingreso_Mensual is 0 |
                     c.Tipo_de_cliente is null |
                     c.Usuario is null |
                     c.Password is null)
                 return true;
+        
             return false;
         }
 

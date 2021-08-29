@@ -8,7 +8,10 @@ namespace API.Models
         public string Descripcion { get; set; }
         public string Moneda { get; set; }
         public string Tipo { get; set; }
-        public string Cliente_Propietario { get; set; }
-        public IList<string> Tarjetas{get;set;}
+        public string Cedula_Propietario { get; set; }
+        public double Saldo { get; set; }
+        public List<Movimiento> Movimientos { get; set; }
+
     }
+
 }

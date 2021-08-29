@@ -25,7 +25,11 @@ namespace API.Services
 
 
         // Obtiene el tarjeta que coincida con la Numero_de_tarjeta deseada.
-        public static Tarjeta Get(string Numero_de_tarjeta) => Tarjetas.FirstOrDefault(p => p.Numero_de_tarjeta == Numero_de_tarjeta);
+        public static Tarjeta Get_By_Num_Tarjeta(string Numero_de_tarjeta) => Tarjetas.FirstOrDefault(p => p.Numero_de_tarjeta == Numero_de_tarjeta);
+
+        
+        // Obtiene las tarjetas  que coincida con el numero de cuenta.
+        public static List<Tarjeta> Get_By_Num_Cuenta(string Numero_cuenta) => Tarjetas.FindAll(p => p.Numero_Cuenta == Numero_cuenta);
 
         // Agrega un nuevo tarjeta a la lista de tarjetas.
         public static void Add(Tarjeta tarjeta)
@@ -37,7 +41,7 @@ namespace API.Services
         // Elimina un tarjeta de la lista de tarjetas.
         public static void Delete(string nombre)
         {
-            var tarjeta = Get(nombre);
+            var tarjeta = Get_By_Num_Tarjeta(nombre);
             if(tarjeta is null)
                 return;
 
@@ -57,7 +61,8 @@ namespace API.Services
 
         public static void UpdateJson()
         {
-            File.WriteAllText(@"JSON_FILES\"+nombreDB+".json", JsonConvert.SerializeObject(Tarjetas));
+            string text = JsonConvert.SerializeObject(Tarjetas, Formatting.Indented);
+            File.WriteAllText(@"JSON_FILES\"+nombreDB+".json", text);
         }
 
 

@@ -1,1 +1,61 @@
-[{"Numero_Cuenta":"1234","Descripcion":"MASTERCARD","Moneda":"Colones","Tipo":"Ahorros","Cliente_Propietario":"604530340","Tarjetas":["1111","2222"]}]
+[
+  {
+    "Numero_Cuenta": "1234",
+    "Descripcion": "MASTERCARD",
+    "Moneda": "Colones",
+    "Tipo": "Ahorros",
+    "Cedula_Propietario": "604530340",
+    "Saldo": 42.07000000000001,
+    "Movimientos": [
+      {
+        "Fecha": "Sun, 29 Aug 2021 06:33:21 GMT",
+        "Monto": 10.0,
+        "Tipo": "transferencia de 2100"
+      },
+      {
+        "Fecha": "Sun, 29 Aug 2021 06:34:18 GMT",
+        "Monto": 60.0,
+        "Tipo": "transferencia de 1234"
+      }
+    ]
+  },
+  {
+    "Numero_Cuenta": "2100",
+    "Descripcion": "VISA",
+    "Moneda": "Dólares",
+    "Tipo": "Ahorros",
+    "Cedula_Propietario": "117920956",
+    "Saldo": 427.32,
+    "Movimientos": [
+      {
+        "Fecha": "Sun, 29 Aug 2021 06:33:10 GMT",
+        "Monto": 20.0,
+        "Tipo": "Retiro"
+      },
+      {
+        "Fecha": "Sun, 29 Aug 2021 06:33:21 GMT",
+        "Monto": 10.0,
+        "Tipo": "Transferencia de 2100"
+      },
+      {
+        "Fecha": "Sun, 29 Aug 2021 06:33:57 GMT",
+        "Monto": 57.99,
+        "Tipo": "Deposito"
+      },
+      {
+        "Fecha": "Sun, 29 Aug 2021 06:34:18 GMT",
+        "Monto": 60.0,
+        "Tipo": "Transferencia de 1234"
+      }
+    ]
+  },
+  {
+    "Numero_Cuenta": "0110",
+    "Descripcion": "BCR",
+    "Moneda": "Colones",
+    "Tipo": "Corriente",
+    "Cedula_Propietario": "117920956",
+    "Saldo": 300000.0,
+    "Movimientos": []
+  }
+]

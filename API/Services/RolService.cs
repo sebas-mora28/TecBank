@@ -78,7 +78,8 @@ namespace API.Services
 
         public static void UpdateJson()
         {
-            File.WriteAllText(@"JSON_FILES\"+nombreDB+".json", JsonConvert.SerializeObject(Roles));
+            string text = JsonConvert.SerializeObject(Roles, Formatting.Indented);
+            File.WriteAllText(@"JSON_FILES\"+nombreDB+".json", text);
         }
 
         public static bool Has_null_attributes(Rol r)

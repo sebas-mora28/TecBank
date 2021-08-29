@@ -14,14 +14,10 @@ namespace API.Models
         // (Físico, Jurídico)
         public string Tipo_de_cliente { get; set; }
 
-        public string Password{get;set;}
-
         public string Usuario{get;set;}
 
-        public IList<string> Cuentas{get;set;}
+        public string Password{get;set;}
 
         public IList<Prestamo> Prestamos{get;set;} 
-        
-
     }
 }

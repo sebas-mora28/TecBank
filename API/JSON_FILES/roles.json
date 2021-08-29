@@ -1,1 +1,22 @@
-[{"Nombre":"Shef","Descripcion":"Sabe cocinar."},{"Nombre":"Estafador","Descripcion":"Es una persona que sabe roba."},{"Nombre":"Random2","Descripcion":"something new."},{"Nombre":"Manager","Descripcion":"xzx"}]
+[
+  {
+    "Nombre": "Estafador",
+    "Descripcion": "Roba disimuladamente."
+  },
+  {
+    "Nombre": "Deudor",
+    "Descripcion": "Acredita la carrera."
+  },
+  {
+    "Nombre": "Chef",
+    "Descripcion": "Cocina."
+  },
+  {
+    "Nombre": "Policia",
+    "Descripcion": "Se queda mirando."
+  },
+  {
+    "Nombre": "Admin",
+    "Descripcion": "Adminitras todo."
+  }
+]
