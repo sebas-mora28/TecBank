@@ -153,7 +153,7 @@ namespace API.Controllers
                 movimiento.Tipo = "Retiro";
             }
 
-            movimiento.Fecha = DateTime.Now.ToString("ddd, dd MMM yyy HH':'mm':'ss 'GMT'"); // Guardar el momento exacto de la transaccion.
+            movimiento.Fecha = DateTime.Now.ToString("dd-mmm-yyyy hh:mm:ss"); // Guardar el momento exacto de la transaccion.
             existing_cuenta.Movimientos.Add(movimiento);    // Agregar movimiento a la lista de transacciones.
             CuentaService.Update(existing_cuenta);          // Actualizar la cuenta
             return Ok(existing_cuenta.Saldo);
@@ -188,16 +188,19 @@ namespace API.Controllers
             receptor.Saldo += transferencia.Monto;   // Sumar el monto al saldo actual de la cuenta a transferir.
             emisor.Saldo -= transferencia.Monto;     // Restar el monto al saldo actual de la cuenta que transfiere.
 
-            Movimiento mov = new Movimiento { 
-                        Fecha = DateTime.Now.ToString("ddd, dd MMM yyy HH':'mm':'ss 'GMT'"), 
+            Movimiento movE = new Movimiento { 
+                        Fecha = DateTime.Now.ToString("dd-mmm-yyyy hh:mm:ss"), 
                         Monto = transferencia.Monto, 
                         Tipo = "Transferencia a "+transferencia.Receptor
                         };
-            emisor.Movimientos.Add(mov);            // Añadir movimiento a la cuenta.
-            CuentaService.Update(emisor);
-
-            mov.Tipo = "Transferencia de "+Numero_Cuenta;
-            receptor.Movimientos.Add(mov);
+            Movimiento movR = new Movimiento { 
+                        Fecha = DateTime.Now.ToString("dd-mmm-yyyy hh:mm:ss"), 
+                        Monto = transferencia.Monto, 
+                        Tipo = "Transferencia de "+Numero_Cuenta
+                        };
+            emisor.Movimientos.Add(movE);            // Añadir movimiento a la cuenta.
+            receptor.Movimientos.Add(movR);
+            CuentaService.Update(emisor);           // Actualizar datos de la cuenta.
             CuentaService.Update(receptor);
 
             return Ok(receptor.Saldo);

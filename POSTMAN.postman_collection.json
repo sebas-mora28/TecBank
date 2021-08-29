@@ -73,15 +73,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/cuenta/1234",
+					"raw": "http://localhost:5000/cuenta",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
-						"cuenta",
-						"1234"
+						"cuenta"
 					]
 				}
 			},
@@ -93,7 +92,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/cuenta/2100/mv",
+					"raw": "http://localhost:5000/cuenta/1234/mv",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -101,7 +100,7 @@
 					"port": "5000",
 					"path": [
 						"cuenta",
-						"2100",
+						"1234",
 						"mv"
 					]
 				}
@@ -205,7 +204,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "  {\r\n    \"Nombre_Completo\": \"Shakime Richards Sparks\",\r\n    \"Cedula\": \"117920956\",\r\n    \"Direccion\": \"Guadalupe, San Jose\",\r\n    \"Telefonos\": [\r\n      \"72802533\"\r\n    ],\r\n    \"Ingreso_Mensual\": 1500.0,\r\n    \"Tipo_de_cliente\": \"fisico\",\r\n    \"Usuario\": \"jeykime\",\r\n    \"Password\": \"abc123\",\r\n  }",
+					"raw": "  {\r\n    \"Nombre_Completo\": \"Shakime Richards Sparks\",\r\n    \"Cedula\": \"117920956\",\r\n    \"Direccion\": \"Guadalupe, San Jose\",\r\n    \"Telefonos\": [\r\n      \"72802533\"\r\n    ],\r\n    \"Ingreso_Mensual\": 1500.0,\r\n    \"Tipo_de_cliente\": \"fisico\",\r\n    \"Usuario\": \"jeykime\",\r\n    \"Password\": \"abc\"\r\n  }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -269,7 +268,15 @@
 					}
 				},
 				"url": {
-					"raw": ""
+					"raw": "http://localhost:5000/tarjeta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tarjeta"
+					]
 				}
 			},
 			"response": []
@@ -287,7 +294,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "    {\r\n        \"monto\": 0.470000000000027,\r\n        \"tipo\":\"Retiro\"\r\n    }",
+					"raw": "    {\r\n        \"monto\": 24.99,\r\n        \"tipo\":\"Retiro\"\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -322,7 +329,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "    {\r\n        \"receptor\": \"2100\",\r\n        \"monto\":60\r\n    }",
+					"raw": "    {\r\n        \"receptor\": \"1234\",\r\n        \"monto\":10000\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -330,7 +337,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/cuenta/1234=tr",
+					"raw": "http://localhost:5000/cuenta/0110=tr",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -338,7 +345,7 @@
 					"port": "5000",
 					"path": [
 						"cuenta",
-						"1234=tr"
+						"0110=tr"
 					]
 				}
 			},

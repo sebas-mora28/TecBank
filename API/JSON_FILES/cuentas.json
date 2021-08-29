@@ -5,17 +5,17 @@
     "Moneda": "Colones",
     "Tipo": "Ahorros",
     "Cedula_Propietario": "604530340",
-    "Saldo": 42.07000000000001,
+    "Saldo": 619000.0,
     "Movimientos": [
       {
-        "Fecha": "Sun, 29 Aug 2021 06:33:21 GMT",
-        "Monto": 10.0,
-        "Tipo": "transferencia de 2100"
+        "Fecha": "29-47-2021 12:47:52",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia de 0110"
       },
       {
-        "Fecha": "Sun, 29 Aug 2021 06:34:18 GMT",
-        "Monto": 60.0,
-        "Tipo": "transferencia de 1234"
+        "Fecha": "29-47-2021 12:47:55",
+        "Monto": 27000.0,
+        "Tipo": "Depósito"
       }
     ]
   },
@@ -25,27 +25,12 @@
     "Moneda": "Dólares",
     "Tipo": "Ahorros",
     "Cedula_Propietario": "117920956",
-    "Saldo": 427.32,
+    "Saldo": 425.0,
     "Movimientos": [
       {
-        "Fecha": "Sun, 29 Aug 2021 06:33:10 GMT",
-        "Monto": 20.0,
+        "Fecha": "29-49-2021 12:49:04",
+        "Monto": 24.99,
         "Tipo": "Retiro"
-      },
-      {
-        "Fecha": "Sun, 29 Aug 2021 06:33:21 GMT",
-        "Monto": 10.0,
-        "Tipo": "Transferencia de 2100"
-      },
-      {
-        "Fecha": "Sun, 29 Aug 2021 06:33:57 GMT",
-        "Monto": 57.99,
-        "Tipo": "Deposito"
-      },
-      {
-        "Fecha": "Sun, 29 Aug 2021 06:34:18 GMT",
-        "Monto": 60.0,
-        "Tipo": "Transferencia de 1234"
       }
     ]
   },
@@ -55,7 +40,13 @@
     "Moneda": "Colones",
     "Tipo": "Corriente",
     "Cedula_Propietario": "117920956",
-    "Saldo": 300000.0,
-    "Movimientos": []
+    "Saldo": 220000.0,
+    "Movimientos": [
+      {
+        "Fecha": "29-47-2021 12:47:52",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia a 1234"
+      }
+    ]
   }
 ]
