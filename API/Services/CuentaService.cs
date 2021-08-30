@@ -27,6 +27,7 @@ namespace API.Services
         // Obtiene las cuenta que coincida con el numero de cedula.
         public static List<Cuenta> Get_By_Cedula(string Cedula) => Cuentas.FindAll(p => p.Cedula_Propietario == Cedula);
 
+
         // Agrega un nuevo cuenta a la lista de cuentas.
         public static void Add(Cuenta cuenta)
         {   

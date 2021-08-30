@@ -8,8 +8,6 @@
     ],
     "Ingreso_Mensual": 50000000000.0,
     "Tipo_de_cliente": "fisico",
-    "Usuario": "adrian19921",
-    "Password": "123456",
     "Prestamos": [
       {
         "Numero_de_prestamo": 1,
@@ -27,7 +25,9 @@
           }
         ]
       }
-    ]
+    ],
+    "Usuario": "adrian19921",
+    "Password": "123456"
   },
   {
     "Nombre_Completo": "Shakime Richards Sparks",
@@ -38,8 +38,8 @@
     ],
     "Ingreso_Mensual": 1500.0,
     "Tipo_de_cliente": "fisico",
+    "Prestamos": [],
     "Usuario": "jeykime",
-    "Password": "abc",
-    "Prestamos": []
+    "Password": "abc"
   }
 ]

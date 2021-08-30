@@ -13,11 +13,15 @@ namespace API.Services
 {
     public static class ClienteService
     {
+        public static User user;
+        static string adminDB = "admin";
+
         static List<Cliente> Clientes { get; }
         static string nombreDB = "clientes";
         static ClienteService()
         {
             Clientes = JsonConvert.DeserializeObject<List<Cliente>>(JSONManager.loadDB_string(nombreDB));
+            user = JsonConvert.DeserializeObject<User>(JSONManager.loadDB_string(adminDB));
         }
 
         // Obtiene todos los clientes.
@@ -26,6 +30,10 @@ namespace API.Services
 
         // Obtiene el cliente que coincida con la cedula deseada.
         public static Cliente Get(string cedula) => Clientes.FirstOrDefault(p => p.Cedula == cedula);
+
+        // Obtiene el cliente que coincida con el cliente informacion suministrada de usuario.
+        public static Cliente Get_User(string user, string pass) => Clientes.FirstOrDefault(
+            p => p.Usuario == user && p.Password == pass);
 
         // Agrega un nuevo cliente a la lista de clientes.
         public static void Add(Cliente cliente)

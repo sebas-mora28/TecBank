@@ -3,13 +3,15 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using API.Models;
 using API.Services;
+using Newtonsoft.Json;
 
 namespace API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     public class ClienteController : ControllerBase
-    {
+    {   
+
         public ClienteController(){}
 
         // GET all action
@@ -27,6 +29,23 @@ namespace API.Controllers
                 return NotFound();
 
             return cliente;
+        }
+
+        // LOG IN action
+        [HttpPost("login")]
+        public IActionResult LogIn(Cliente info)
+        {
+            // Administrador
+            if (ClienteService.user.Usuario.Equals(info.Usuario) &&
+                ClienteService.user.Password.Equals(info.Password))
+                return Ok();
+            
+            // Cliente Regular
+            var existing_client = ClienteService.Get_User(info.Usuario, info.Password);
+            if (existing_client is null)
+                return BadRequest("\tUsuario o contraseña incorrectas.");
+            string ouput = JsonConvert.SerializeObject(existing_client);
+            return Content(ouput);
         }
 
 

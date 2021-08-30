@@ -170,6 +170,35 @@
 			"response": []
 		},
 		{
+			"name": "post_login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Usuario\": \"admin\",\r\n    \"Password\": \"admin\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/cliente/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"cliente",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "post_rol",
 			"request": {
 				"method": "POST",
