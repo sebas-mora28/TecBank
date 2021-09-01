@@ -13,11 +13,15 @@ namespace API.Services
 {
     public static class ClienteService
     {
+        public static User user;
+        static string adminDB = "admin";
+
         static List<Cliente> Clientes { get; }
         static string nombreDB = "clientes";
         static ClienteService()
         {
             Clientes = JsonConvert.DeserializeObject<List<Cliente>>(JSONManager.loadDB_string(nombreDB));
+            user = JsonConvert.DeserializeObject<User>(JSONManager.loadDB_string(adminDB));
         }
 
         // Obtiene todos los clientes.
@@ -26,6 +30,10 @@ namespace API.Services
 
         // Obtiene el cliente que coincida con la cedula deseada.
         public static Cliente Get(string cedula) => Clientes.FirstOrDefault(p => p.Cedula == cedula);
+
+        // Obtiene el cliente que coincida con el cliente informacion suministrada de usuario.
+        public static Cliente Get_User(string user, string pass) => Clientes.FirstOrDefault(
+            p => p.Usuario == user && p.Password == pass);
 
         // Agrega un nuevo cliente a la lista de clientes.
         public static void Add(Cliente cliente)
@@ -57,7 +65,8 @@ namespace API.Services
 
         public static void UpdateJson()
         {
-            File.WriteAllText(@"JSON_FILES\" + nombreDB + ".json", JsonConvert.SerializeObject(Clientes));
+            string text = JsonConvert.SerializeObject(Clientes, Formatting.Indented);
+            File.WriteAllText(@"JSON_FILES\" + nombreDB + ".json", text);
         }
 
 
@@ -66,12 +75,12 @@ namespace API.Services
             if (c.Nombre_Completo is null |
                     c.Cedula is null |
                     c.Direccion is null |
-                    c.Telefonos is null |
                     c.Ingreso_Mensual is 0 |
                     c.Tipo_de_cliente is null |
                     c.Usuario is null |
                     c.Password is null)
                 return true;
+        
             return false;
         }
 

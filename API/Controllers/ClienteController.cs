@@ -3,13 +3,15 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using API.Models;
 using API.Services;
+using Newtonsoft.Json;
 
 namespace API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     public class ClienteController : ControllerBase
-    {
+    {   
+
         public ClienteController(){}
 
         // GET all action
@@ -23,11 +25,29 @@ namespace API.Controllers
         {
             var cliente = ClienteService.Get(cedula);
 
-            if(cliente == null)
+            if (cliente == null)
                 return NotFound();
 
             return cliente;
         }
+
+        // LOG IN action
+        [HttpPost("login")]
+        public IActionResult LogIn(Cliente info)
+        {
+            // Administrador
+            if (ClienteService.user.Usuario.Equals(info.Usuario) &&
+                ClienteService.user.Password.Equals(info.Password))
+                return Ok();
+            
+            // Cliente Regular
+            var existing_client = ClienteService.Get_User(info.Usuario, info.Password);
+            if (existing_client is null)
+                return BadRequest("\tUsuario o contraseña incorrectas.");
+            string ouput = JsonConvert.SerializeObject(existing_client);
+            return Content(ouput);
+        }
+
 
         // POST action
         [HttpPost]
@@ -45,6 +65,12 @@ namespace API.Controllers
                significa que ya existe un cliente almacenado con esa cedula.*/
             if (ClienteService.Get(cliente.Cedula) != null)
                 return BadRequest("\tYa existe un cliente registrado con este número de cédula.");
+
+            // Inicializar atributos de listas, para evitar errores.
+            if (cliente.Telefonos is null)
+                cliente.Telefonos = new List<string>();
+            if (cliente.Prestamos is null)
+                cliente.Prestamos = new List<Prestamo>();
 
             ClienteService.Add(cliente);
             return CreatedAtAction(nameof(Create), cliente);

@@ -1,0 +1,384 @@
+{
+	"info": {
+		"_postman_id": "6f8690b4-e299-4450-8a7d-23f512d4b717",
+		"name": "TecBank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get_rol",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/rol",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"rol"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_cliente",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"nombre\": \"Shef\",\r\n        \"descripcion\": \"Cocina\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/cliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_cuenta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/cuenta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"cuenta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_cuenta_mv",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/cuenta/1234/mv",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"cuenta",
+						"1234",
+						"mv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_cuentas_cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/cuenta/cuentas/117920956",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"cuenta",
+						"cuentas",
+						"117920956"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_tarjeta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/tarjeta/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tarjeta",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_tarjetas_cuenta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/tarjeta/tarjetas/1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tarjeta",
+						"tarjetas",
+						"1234"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post_login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Usuario\": \"admin\",\r\n    \"Password\": \"admin\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/cliente/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"cliente",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post_rol",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"nombre\": \"Admin\",\r\n        \"descripcion\": \"Adminitras todo.\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/rol",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"rol"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post_cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"Nombre_Completo\": \"Shakime Richards Sparks\",\r\n    \"Cedula\": \"117920956\",\r\n    \"Direccion\": \"Guadalupe, San Jose\",\r\n    \"Telefonos\": [\r\n      \"72802533\"\r\n    ],\r\n    \"Ingreso_Mensual\": 1500.0,\r\n    \"Tipo_de_cliente\": \"fisico\",\r\n    \"Usuario\": \"jeykime\",\r\n    \"Password\": \"abc\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/cliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post_cuenta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Numero_Cuenta\": \"0110\",\r\n  \"Descripcion\": \"BCR\",\r\n  \"Moneda\": \"Colones\",\r\n  \"Tipo\": \"Corriente\",\r\n  \"Cedula_Propietario\":\"117920956\",\r\n  \"Saldo\": 300000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/cuenta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"cuenta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post_tarjeta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Numero_de_tarjeta\": \"00-00\",\r\n  \"Fecha_de_expiracion\": \"11/10/2023\",\r\n  \"Codigo_de_Seguridad\": \"999\",\r\n  \"Tipo\": \"Credito\",\r\n  \"Saldo_o_credito\": 1000,\r\n  \"Numero_Cuenta\": \"2100\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/tarjeta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tarjeta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "movimiento_cuenta",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Nombre",
+						"value": "Chef",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"monto\": 24.99,\r\n        \"tipo\":\"Retiro\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/cuenta/2100=mv",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"cuenta",
+						"2100=mv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transfer_cuenta",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Nombre",
+						"value": "Chef",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"receptor\": \"1234\",\r\n        \"monto\":10000\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/cuenta/0110=tr",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"cuenta",
+						"0110=tr"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

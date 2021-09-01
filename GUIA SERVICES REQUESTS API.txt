@@ -24,23 +24,24 @@ PUT  - http://localhost:5000/rol/{NOMBRE ROL}    ->   UPDATE	->   [SE DEBE ENVIA
 CLIENTES:
 
 FORMATO DE JSON:
-{
-	"nombre_Completo": "Shakime Richards Sparks",
-        "cedula": "117920956",
-        "direccion": "Guadalupe, San Jose",
-        "telefonos": [
-            "50672802533"
-        ],
-        "ingreso_Mensual": 2020,
-        "tipo_de_cliente": "123",
-	"usuario": "jeykime",
-        "password": "lolesmipasion"
-}
-GET  - http://localhost:5000/cliente/ 	         	->   GET ALL   ->   DEVUELVE UN JSON CON TODOS LOS CLIENTES
-GET  - http://localhost:5000/cliente/{CEDULA CLIENTE}   ->   GET       ->   DEVUELVE UN JSON CON EL CLIENTE SOLICITADO
-DEL  - http://localhost:5000/cliente/{CEDULA CLIENTE}   ->   DELETE    ->   BORRA EL CLIENTE {CEDULA CLIENTE} DE LA DB
-POST - http://localhost:5000/cliente  		        ->   CREATE    ->   [SE DEBE ENVIAR UN JSON]CREA UN NUEVO CLIENTE
-PUT  - http://localhost:5000/cliente/{CLIENTE CLIENTE}  ->   UPDATE    ->   [SE DEBE ENVIAR UN JSON]ACTUALIZA UN CLIENTE
+  {
+    "Nombre_Completo": "Shakime Richards Sparks",
+    "Cedula": "117920956",
+    "Direccion": "Guadalupe, San Jose",
+    "Telefonos": [
+      "72802533"
+    ],
+    "Ingreso_Mensual": 1500.0,
+    "Tipo_de_cliente": "fisico",
+    "Usuario": "jeykime",
+    "Password": "abc123"
+  }
+
+GET  - http://localhost:5000/cliente/ 	         		->   GET ALL   ->   DEVUELVE UN JSON CON TODOS LOS CLIENTES
+GET  - http://localhost:5000/cliente/{CEDULA CLIENTE}   	->   GET       ->   DEVUELVE UN JSON CON EL CLIENTE SOLICITADO
+DEL  - http://localhost:5000/cliente/{CEDULA CLIENTE}   	->   DELETE    ->   BORRA EL CLIENTE {CEDULA CLIENTE} DE LA DB
+POST - http://localhost:5000/cliente  		        	->   CREATE    ->   [SE DEBE ENVIAR UN JSON]CREA UN NUEVO CLIENTE
+PUT  - http://localhost:5000/cliente/{CLIENTE}	        	->   UPDATE    ->   [SE DEBE ENVIAR UN JSON]ACTUALIZA UN CLIENTE
 
 
 CUENTAS:
@@ -51,19 +52,23 @@ FORMATO DE JSON:
   "Descripcion": "VISA",
   "Moneda": "Colones",
   "Tipo": "Ahorros",
-  "Cliente_Propietario": "604530340",
+  "Cedula_Propietario":"604530340",
+  "Saldo":0.00,
   "Tarjetas": [
     "1111",
     "2222"
   ]
 }
 
-GET  - http://localhost:5000/cuenta/ 	         	->   GET ALL   ->   DEVUELVE UN JSON CON TODAS LAS CUENTAS
-GET  - http://localhost:5000/cuenta/{NUMERO DE CUENTA}  ->   GET       ->   DEVUELVE UN JSON CON LA CUENTA SOLICITADA
-DEL  - http://localhost:5000/cuenta/{NUMERO DE CUENTA}  ->   DELETE    ->   BORRA LA CUENTA {NUMERO DE CUENTA} DE LA DB
-POST - http://localhost:5000/cuenta  		        ->   CREATE    ->   [SE DEBE ENVIAR UN JSON]CREA UNA NUEVA CUENTA
-PUT  - http://localhost:5000/cuenta/{NUMERO DE CUENTA}  ->   UPDATE    ->   [SE DEBE ENVIAR UN JSON]ACTUALIZA UNA CUENTA
-
+GET  - http://localhost:5000/cuenta/ 	         		->   GET ALL    ->   DEVUELVE UN JSON CON TODAS LAS CUENTAS
+GET  - http://localhost:5000/cuenta/{NUMERO DE CUENTA}  	->   GET        ->   DEVUELVE UN JSON CON LA CUENTA SOLICITADA
+GET  - http://localhost:5000/cuenta/{NUMERO DE CUENTA}/mvt      ->   GET	->   DEVUELVE LOS MOVIMIENTOS DE LA CUENTA SOLICITADA
+GET  - http://localhost:5000/cuenta/cuentas/{CEDULA CLIENTE}    ->   GET        ->   DEVUELVE UN JSON CON LAS CUENTAS DEL CLIENTE SOLICITADO
+DEL  - http://localhost:5000/cuenta/{NUMERO DE CUENTA} 	 	->   DELETE     ->   BORRA LA CUENTA {NUMERO DE CUENTA} DE LA DB
+POST - http://localhost:5000/cuenta  		        	->   CREATE     ->   [SE DEBE ENVIAR UN JSON]CREA UNA NUEVA CUENTA
+PUT  - http://localhost:5000/cuenta/{NUMERO DE CUENTA}  	->   UPDATE     ->   [SE DEBE ENVIAR UN JSON]ACTUALIZA UNA CUENTA
+PUT  - http://localhost:5000/cuenta/{NUMERO DE CUENTA}=mv  	->   MOVIMIENTO ->   [JSON con "numero_cuenta" y "monto"]ACTUALIZA UNA SALDO
+PUT  - http://localhost:5000/cuenta/{NUMERO DE CUENTA}=tr  	->   TRANFER 	->   [JSON con "receptor" y "monto"]ACTUALIZA UNA SALDO
 
 TARJETAS:
 
@@ -78,9 +83,10 @@ FORMATO DE JSON:
   "Numero_Cuenta": "1234"
 }
 
-GET  - http://localhost:5000/tarjeta/ 	         	  ->   GET ALL   ->   DEVUELVE UN JSON CON TODAS LAS TARJETAS
-GET  - http://localhost:5000/tarjeta/{NUMERO DE TARJETA}  ->   GET       ->   DEVUELVE UN JSON CON LA TARJETA SOLICITADA
-DEL  - http://localhost:5000/tarjeta/{NUMERO DE TARJETA}  ->   DELETE    ->   BORRA LA TARJETA {NUMERO DE TARJETA} DE LA DB
-POST - http://localhost:5000/tarjeta  		          ->   CREATE    ->   [SE DEBE ENVIAR UN JSON]CREA UNA NUEVA TARJETA
-PUT  - http://localhost:5000/tarjeta/{NUMERO DE TARJETA}  ->   UPDATE    ->   [SE DEBE ENVIAR UN JSON]ACTUALIZA UNA TARJETA
+GET  - http://localhost:5000/tarjeta/ 	         	 	->   GET ALL   ->   DEVUELVE UN JSON CON TODAS LAS TARJETAS
+GET  - http://localhost:5000/tarjeta/{NUMERO DE TARJETA}  	->   GET       ->   DEVUELVE UN JSON CON LA TARJETA SOLICITADA
+GET  - http://localhost:5000/tarjeta/tarjetas/{NUM TARJETA}     ->   GET       ->   DEVUELVE UN JSON CON LAS TARJETAS DE LA CUENTA SOLICITADA
+DEL  - http://localhost:5000/tarjeta/{NUMERO DE TARJETA}  	->   DELETE    ->   BORRA LA TARJETA {NUMERO DE TARJETA} DE LA DB
+POST - http://localhost:5000/tarjeta  		          	->   CREATE    ->   [SE DEBE ENVIAR UN JSON]CREA UNA NUEVA TARJETA
+PUT  - http://localhost:5000/tarjeta/{NUMERO DE TARJETA}  	->   UPDATE    ->   [SE DEBE ENVIAR UN JSON]ACTUALIZA UNA TARJETA
 

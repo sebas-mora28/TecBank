@@ -8,8 +8,7 @@ namespace API.Models
         public string Fecha_de_expiracion { get; set; }
         public string Codigo_de_Seguridad{get;set;}
         public string Tipo { get; set; }
-        public long Saldo_Disponible { get; set; }
-        public long Monto_de_credito { get; set; }
+        public double Saldo_o_Credito { get; set; }
         public string Numero_Cuenta{get;set;}
     }
 }

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace API.Models
 {
-    public class Cliente
+    public class Cliente : User
     {
         
         public string Nombre_Completo { get; set; }
@@ -14,14 +14,6 @@ namespace API.Models
         // (Físico, Jurídico)
         public string Tipo_de_cliente { get; set; }
 
-        public string Password{get;set;}
-
-        public string Usuario{get;set;}
-
-        public IList<string> Cuentas{get;set;}
-
         public IList<Prestamo> Prestamos{get;set;} 
-        
-
     }
 }
