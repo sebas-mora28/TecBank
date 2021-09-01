@@ -11,39 +11,27 @@
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/deposits_button"
+            android:id="@+id/movements_button"
             android:layout_width="243dp"
             android:layout_height="63dp"
             android:layout_marginStart="72dp"
-            android:layout_marginTop="120dp"
-            android:text="Depositos"
+            android:layout_marginTop="160dp"
+            android:text="Movimientos"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/retiros_button"
-            android:layout_width="243dp"
-            android:layout_height="63dp"
-            android:layout_marginStart="72dp"
-            android:layout_marginTop="68dp"
-            android:text="Retiros"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/deposits_button" />
-
-        <Button
             android:id="@+id/cards_button"
             android:layout_width="243dp"
             android:layout_height="63dp"
             android:layout_marginStart="72dp"
-            android:layout_marginTop="68dp"
+            android:layout_marginTop="304dp"
             android:text="Tarjetas"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/retiros_button" />
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

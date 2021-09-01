@@ -38,9 +38,6 @@
             android:id="@+id/action_transactionFragment_to_depositFragment"
             app:destination="@id/depositFragment" />
         <action
-            android:id="@+id/action_transactionFragment_to_retirosFragment"
-            app:destination="@id/retirosFragment" />
-        <action
             android:id="@+id/action_transactionFragment_to_cardsFragment"
             app:destination="@id/cardsFragment" />
     </fragment>
@@ -55,20 +52,11 @@
     </fragment>
     <fragment
         android:id="@+id/depositFragment"
-        android:name="com.example.tecbankapp.clientView.accounts.transactions.DepositFragment"
+        android:name="com.example.tecbankapp.clientView.accounts.transactions.MovementsFragment"
         android:label="fragment_deposit"
-        tools:layout="@layout/fragment_deposit" >
+        tools:layout="@layout/fragment_movements" >
         <action
             android:id="@+id/action_depositFragment_to_transactionFragment"
-            app:destination="@id/transactionFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/retirosFragment"
-        android:name="com.example.tecbankapp.clientView.accounts.transactions.RetirosFragment"
-        android:label="fragment_retiros"
-        tools:layout="@layout/fragment_retiros" >
-        <action
-            android:id="@+id/action_retirosFragment_to_transactionFragment"
             app:destination="@id/transactionFragment" />
     </fragment>
     <fragment

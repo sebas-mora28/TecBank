@@ -12,61 +12,45 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.tecbankapp.R;
 import com.example.tecbankapp.clientView.LoginFragment;
+import com.example.tecbankapp.clientView.accounts.account.Account;
+import com.example.tecbankapp.clientView.accounts.account.AccountAdapter;
 import com.example.tecbankapp.databinding.FragmentAccountClientBinding;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link AccountClientFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class AccountClientFragment extends Fragment {
 
 
     private FragmentAccountClientBinding binding;
+    private JSONArray accounts;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public AccountClientFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AccountClientFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static AccountClientFragment newInstance(String param1, String param2) {
-        AccountClientFragment fragment = new AccountClientFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -74,17 +58,7 @@ public class AccountClientFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentAccountClientBinding.inflate(inflater, container, false);
-
-        ArrayList<String> list = new ArrayList<>();
-        for (int i=0; i < 30; i++)
-        {
-            list.add(Integer.toString(i) + "  hola");
-        }
-
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, list);
-
-        binding.accountsList.setAdapter(arrayAdapter);
-        binding.accountsList.setClickable(true);
+        getAccounts();
         return binding.getRoot();
     }
 
@@ -105,6 +79,49 @@ public class AccountClientFragment extends Fragment {
 
             }
         });
+
+    }
+
+    public void getAccounts(){
+        RequestQueue queue = Volley.newRequestQueue(getContext());
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
+                (Request.Method.GET, "https://tecbank.azurewebsites.net/cuenta/cuentas/604530340", null, new Response.Listener<JSONArray>() {
+
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        System.out.println(response.toString());
+                        ArrayList<Account> accounts = new ArrayList<>();
+                        for(int i=0; i< response.length(); i++){
+
+                            try {
+                                JSONObject current = response.getJSONObject(i);
+                                Account account = new Account(current.getString("numero_Cuenta"), current.getString("descripcion"),
+                                                                current.getString("moneda"), current.getString("tipo"), current.getString("cedula_Propietario"),
+                                                                current.getString("saldo"));
+
+                                accounts.add(account);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+                        AccountAdapter arrayAdapter = new AccountAdapter(getContext(), accounts);
+                        binding.accountsList.setAdapter(arrayAdapter);
+                        binding.accountsList.setClickable(true);
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        System.out.println(error);
+
+                    }
+
+                });
+
+
+
+        queue.add(jsonObjectRequest);
 
 
 
