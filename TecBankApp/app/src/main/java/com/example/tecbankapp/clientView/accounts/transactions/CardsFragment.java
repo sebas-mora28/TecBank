@@ -17,8 +17,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.tecbankapp.clientView.accounts.AccountClientFragment;
 import com.example.tecbankapp.clientView.accounts.account.AccountAdapter;
 import com.example.tecbankapp.databinding.FragmentCardsBinding;
+import com.example.tecbankapp.menu.MainActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -50,6 +52,7 @@ public class CardsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentCardsBinding.inflate(inflater, container, false);
+        ((MainActivity) getActivity()).setTitle("Tarjetas");
 
         return binding.getRoot();
     }
@@ -59,15 +62,23 @@ public class CardsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
+
+
         RequestQueue queue = Volley.newRequestQueue(getContext());
+        String url = String.format("http://10.0.2.2:5000/tarjeta/tarjetas/%s", AccountClientFragment.currentAccout);
             JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
-                (Request.Method.GET, "https://tecbank.azurewebsites.net/tarjeta/tarjetas/1234", null, new Response.Listener<JSONArray>() {
+                (Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
 
                     @Override
                     public void onResponse(JSONArray response) {
-                        System.out.println(response.toString());
+                        System.out.println(response.length());
 
                         ArrayList<String> cards= new ArrayList<>();
+
+                        if (response.length() == 0){
+                            cards.add("No tiene tarjetas asociadas a esta cuenta");
+                        }
+
                         for(int i=0; i< response.length(); i++){
 
                             try {
@@ -82,13 +93,13 @@ public class CardsFragment extends Fragment {
                                 e.printStackTrace();
                             }
 
-                            ArrayAdapter arrayAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1,cards);
-
-                            binding.cardsListView.setAdapter(arrayAdapter);
-                            binding.cardsListView.setClickable(true);
-
-
                         }
+
+                        ArrayAdapter arrayAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1,cards);
+
+                        binding.cardsListView.setAdapter(arrayAdapter);
+                        binding.cardsListView.setClickable(true);
+
 
 
 

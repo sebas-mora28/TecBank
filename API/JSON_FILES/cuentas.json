@@ -5,7 +5,7 @@
     "Moneda": "Colones",
     "Tipo": "Ahorros",
     "Cedula_Propietario": "604530340",
-    "Saldo": 619000.0,
+    "Saldo": 789000.0,
     "Movimientos": [
       {
         "Fecha": "29-47-2021 12:47:52",
@@ -16,6 +16,91 @@
         "Fecha": "29-47-2021 12:47:55",
         "Monto": 27000.0,
         "Tipo": "Depósito"
+      },
+      {
+        "Fecha": "01-53-2021 06:53:01",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia de 0110"
+      },
+      {
+        "Fecha": "01-56-2021 11:56:59",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia de 0110"
+      },
+      {
+        "Fecha": "01-57-2021 11:57:01",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia de 0110"
+      },
+      {
+        "Fecha": "01-57-2021 11:57:02",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia de 0110"
+      },
+      {
+        "Fecha": "02-29-2021 12:29:09",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia de 0110"
+      },
+      {
+        "Fecha": "02-51-2021 12:51:31",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia de 0110"
+      },
+      {
+        "Fecha": "02-51-2021 12:51:33",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia de 0110"
+      },
+      {
+        "Fecha": "02-51-2021 12:51:34",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia de 0110"
+      },
+      {
+        "Fecha": "02-51-2021 12:51:35",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia de 0110"
+      },
+      {
+        "Fecha": "02-51-2021 12:51:49",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia de 0110"
+      },
+      {
+        "Fecha": "02-51-2021 12:51:51",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia de 0110"
+      },
+      {
+        "Fecha": "02-51-2021 12:51:52",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia de 0110"
+      },
+      {
+        "Fecha": "02-51-2021 12:51:53",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia de 0110"
+      },
+      {
+        "Fecha": "02-51-2021 12:51:54",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia de 0110"
+      },
+      {
+        "Fecha": "02-51-2021 12:51:56",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia de 0110"
+      },
+      {
+        "Fecha": "02-51-2021 12:51:59",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia de 0110"
+      },
+      {
+        "Fecha": "02-52-2021 12:52:01",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia de 0110"
       }
     ]
   },
@@ -40,10 +125,95 @@
     "Moneda": "Colones",
     "Tipo": "Corriente",
     "Cedula_Propietario": "117920956",
-    "Saldo": 220000.0,
+    "Saldo": 50000.0,
     "Movimientos": [
       {
         "Fecha": "29-47-2021 12:47:52",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia a 1234"
+      },
+      {
+        "Fecha": "01-53-2021 06:53:01",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia a 1234"
+      },
+      {
+        "Fecha": "01-56-2021 11:56:59",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia a 1234"
+      },
+      {
+        "Fecha": "01-57-2021 11:57:01",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia a 1234"
+      },
+      {
+        "Fecha": "01-57-2021 11:57:02",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia a 1234"
+      },
+      {
+        "Fecha": "02-29-2021 12:29:09",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia a 1234"
+      },
+      {
+        "Fecha": "02-51-2021 12:51:31",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia a 1234"
+      },
+      {
+        "Fecha": "02-51-2021 12:51:33",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia a 1234"
+      },
+      {
+        "Fecha": "02-51-2021 12:51:34",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia a 1234"
+      },
+      {
+        "Fecha": "02-51-2021 12:51:35",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia a 1234"
+      },
+      {
+        "Fecha": "02-51-2021 12:51:49",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia a 1234"
+      },
+      {
+        "Fecha": "02-51-2021 12:51:51",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia a 1234"
+      },
+      {
+        "Fecha": "02-51-2021 12:51:52",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia a 1234"
+      },
+      {
+        "Fecha": "02-51-2021 12:51:53",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia a 1234"
+      },
+      {
+        "Fecha": "02-51-2021 12:51:54",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia a 1234"
+      },
+      {
+        "Fecha": "02-51-2021 12:51:56",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia a 1234"
+      },
+      {
+        "Fecha": "02-51-2021 12:51:59",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia a 1234"
+      },
+      {
+        "Fecha": "02-52-2021 12:52:01",
         "Monto": 10000.0,
         "Tipo": "Transferencia a 1234"
       }
