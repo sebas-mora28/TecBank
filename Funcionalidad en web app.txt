@@ -1,0 +1,32 @@
+/roles
+
+->Full CRUD
+->IDEAL PARA LA DEFENSA
+
+/clientes
+
+->Full CRUD
+->BUG! No se puede crear un cliente e inmediantamente editarlo. Primero hay que refrescar la pagina manualmente (Es por un problema con las mayusculas de los json)
+
+
+/cuentas
+
+->GET
+->DELETE
+->POST
+-> NO SE PUEDEN EDITAR LOS ITEMS
+
+
+/tarjetas
+
+-> Solo GET
+
+
+/login 
+
+admin + cualquier password para entrar a admin view
+
+Funcionalidad real en caso de cliente view (i.e: tiene que poner un user y password que esten en los json)
+
+
+

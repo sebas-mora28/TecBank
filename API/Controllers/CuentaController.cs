@@ -189,12 +189,12 @@ namespace API.Controllers
             emisor.Saldo -= transferencia.Monto;     // Restar el monto al saldo actual de la cuenta que transfiere.
 
             Movimiento movE = new Movimiento { 
-                        Fecha = DateTime.Now.ToString("dd-mmm-yyyy hh:mm:ss"), 
+                        Fecha = DateTime.Now.ToString("dd-MMM-yyyy hh:mm:ss"), 
                         Monto = transferencia.Monto, 
                         Tipo = "Transferencia a "+transferencia.Receptor
                         };
             Movimiento movR = new Movimiento { 
-                        Fecha = DateTime.Now.ToString("dd-mmm-yyyy hh:mm:ss"), 
+                        Fecha = DateTime.Now.ToString("dd-MMM-yyyy hh:mm:ss"), 
                         Monto = transferencia.Monto, 
                         Tipo = "Transferencia de "+Numero_Cuenta
                         };

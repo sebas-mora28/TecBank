@@ -1,16 +1,75 @@
 {
-  "users": [
+  "cliente": [
     {
-      "username": "jose",
+      "id": 1,
+      "nombre_Completo": "Jose Alejandro Chavarria",
+      "cedula": 118190603,
+      "direccion": "Por aqui cerquita",
+      "telefono": "506sumama",
+      "ingreso_mensual": 99999999999,
+      "tipo_de_cliente": "fisico",
+      "usuario": "jose",
       "password": "1108"
     },
     {
-      "username": "suki",
+      "id": 2,
+      "nombre_Completo": "Suki Maria Onara",
+      "cedula": 1234567890,
+      "direccion": "azul",
+      "telefono": "666",
+      "ingreso_mensual": 10,
+      "tipo_de_cliente": "fisico",
+      "usuario": "suki",
       "password": "2020"
     },
     {
-      "username": "Nalion",
+      "id": 3,
+      "nombre_Completo": "Nalion Drakkari Trollbane",
+      "cedula": 11,
+      "direccion": "Azeroth",
+      "telefono": "500light",
+      "ingreso_mensual": 8000,
+      "tipo_de_cliente": "virual",
+      "usuario": "Nalion",
       "password": "wow"
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "nombre": "Analista",
+      "descripcion": "Analiza la vara"
+    },
+    {
+      "id": 2,
+      "nombre": "Administrador",
+      "descripcion": "Administra la vara"
+    }
+  ],
+  "cuenta": [
+    {
+      "numero_Cuenta": "1234",
+      "descripcion": "VISA",
+      "moneda": "Colones",
+      "tipo": "Ahorros",
+      "cliente_Propietario": "604530340"
+    },
+    {
+      "numero_Cuenta": "09876",
+      "descripcion": "MC",
+      "moneda": "Euros",
+      "tipo": "Ahorros",
+      "cliente_Propietario": "604530340"
+    }
+  ],
+  "tarjeta": [
+    {
+      "numero_de_tarjeta": "11-11-11",
+      "fecha_de_expiracion": "11/02/2021",
+      "codigo_de_Seguridad": "135",
+      "tipo": "Debito",
+      "monto_de_credito": 40000,
+      "numero_Cuenta": "1234"
     }
   ]
 }

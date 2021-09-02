@@ -19,6 +19,12 @@ import { AboutComponent } from './pages/about/about.component';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { LoginComponent } from './pages/login/login.component';
+import { ItemHolderComponent } from './component/item-holder/item-holder.component';
+import { ItemComponent } from './component/item/item.component';
+import { AddItemComponent } from './component/add-item/add-item.component';
+import { ButtonComponent } from './component/button/button.component';
+import { EditItemComponent } from './component/edit-item/edit-item.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -36,13 +42,19 @@ import { LoginComponent } from './pages/login/login.component';
     AboutComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    ItemHolderComponent,
+    ItemComponent,
+    AddItemComponent,
+    ButtonComponent,
+    EditItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

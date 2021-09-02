@@ -1,0 +1,27 @@
+<div class="item">
+    <fa-icon (click)="onEdit(item)" class="icon" [icon] = "faEdit"></fa-icon>
+
+    <h2 *ngIf="in_clientes">Nombre Completo: {{item.nombre_Completo}}</h2>
+    <h2 *ngIf="in_roles">Rol: {{item.nombre}}</h2>
+    <h2 *ngIf="in_cuentas">Número de cuenta: {{item.numero_Cuenta}}</h2>
+    <h2 *ngIf="in_tarjetas">Número de tarjeta: {{item.numero_de_tarjeta}}</h2>
+    
+    
+    <h3 *ngIf="in_cuentas || in_roles">Descripción: {{item.descripcion}}</h3>
+    <h3 *ngIf="in_clientes">Cédula: {{item.Cedula}}{{item.cedula}}</h3>
+    <h3 *ngIf="in_clientes">Dirección: {{item.Direccion}}{{item.direccion}}</h3>
+    <h3 *ngIf="in_clientes">Teléfono: {{item.Telefonos}}{{item.telefonos}}</h3>
+    <h3 *ngIf="in_clientes">Ingreso mensual: {{item.Ingreso_Mensual}}{{item.ingreso_Mensual}}</h3>
+    <h3 *ngIf="in_clientes">Tipo de cliente: {{item.Tipo_de_cliente}}{{item.tipo_de_cliente}}</h3>
+    <h3 *ngIf="in_clientes">Nombre de usuario: {{item.Usuario}}{{item.usuario}}</h3>
+    <h3 *ngIf="in_clientes">Contraseña: {{item.Password}}{{item.password}}</h3>
+    <h3 *ngIf="in_cuentas">Moneda: {{item.moneda}}</h3>
+    <h3 *ngIf="in_cuentas">Cédula del dueño: {{item.cedula_Propietario}}</h3>
+    <h3 *ngIf="in_cuentas">Tipo de cuenta: {{item.tipo}}</h3>
+    <h3 *ngIf="in_cuentas">Saldo en la cuenta: {{item.saldo}}</h3>
+    <h3 *ngIf="in_tarjetas">Tipo de tarjeta: {{item.tipo}}</h3>
+    <h3 *ngIf="in_tarjetas">Crédito o saldo disponibles: {{item.monto_de_credito}}</h3>
+    <h3 *ngIf="in_tarjetas">Expiración: {{item.fecha_de_expiracion}}</h3>
+    <h3 *ngIf="in_tarjetas">Código de seguridad: {{item.codigo_de_Seguridad}}</h3>
+    
+</div>
