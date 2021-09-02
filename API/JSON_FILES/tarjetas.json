@@ -12,7 +12,7 @@
     "Fecha_de_expiracion": "11/10/2023",
     "Codigo_de_Seguridad": "999",
     "Tipo": "Credito",
-    "Saldo_o_Credito": 1000.0,
+    "Saldo_o_Credito": -1000.0,
     "Numero_Cuenta": "2100"
   }
 ]
