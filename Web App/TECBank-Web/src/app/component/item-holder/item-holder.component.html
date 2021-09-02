@@ -1,0 +1,34 @@
+<div class="container">
+    <h1>{{titulo}}</h1>
+
+    <app-item
+        *ngFor = "let item of items" [item] = "item" (onEditItem)="editItemClicked(item)">
+    </app-item>
+
+    <app-button *ngIf = "!showEditItem" 
+        color="{{ showAddItem ? '#DEE2D6' : '#FCB07E'}}"
+        text="{{ showAddItem ? 'Cerrar' : 'Agregar'}}" 
+        (btnClick) = "toggleAddItem()"
+    >
+    </app-button>
+
+    <app-button *ngIf = "showEditItem" 
+        color="#DEE2D6"
+        text="Cancelar" 
+        (btnClick) = "cancelEditItem()"
+    >
+    </app-button>
+    <app-button *ngIf = "showEditItem" 
+        color="red"
+        text="Eliminar" 
+        (btnClick) = "deleteItem()"
+    >
+    </app-button>
+
+    <h1 *ngIf = "showEditItem">Editando a {{current_item_name}}{{current_item_c_name}} {{current_item_number_c}}{{current_item_number_t}}</h1>
+    <app-add-item
+        url = {{url}}
+        (onAddItem)="add_item($event)"
+        (onEditItem)="edit_item($event)">
+    </app-add-item>
+</div>

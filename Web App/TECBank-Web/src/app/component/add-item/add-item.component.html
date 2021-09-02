@@ -1,0 +1,223 @@
+<form  *ngIf="showAddItem" class="login" (ngSubmit)="onSubmit()">
+
+    <div *ngIf='url == "/roles"' class="form-control">
+        <label for="rol"></label>
+        <input
+            type="text"
+            name="rol"
+            [(ngModel)]="rol"
+            id="rol"
+            placeholder="Nombre del Rol"
+        >
+    </div>
+    <div *ngIf='url == "/clientes"' class="form-control">
+        <label for="nombre_Completo"></label>
+        <input
+            type="text"
+            name="nombre_Completo"
+            [(ngModel)]="nombre_Completo"
+            id="nombre_Completo"
+            placeholder="Nombre del cliente"
+        >
+    </div>
+    <div *ngIf='url == "/cuentas"' class="form-control">
+        <label for="numero"></label>
+        <input 
+            type="text" 
+            name="numero" 
+            [(ngModel)]="numero_cuenta" 
+            id="numero" 
+            placeholder="Número de cuenta" 
+        >
+    </div>
+    <div *ngIf='url == "/tarjetas"' class="form-control">
+        <label for="numero"></label>
+        <input 
+            type="number" 
+            name="numero" 
+            [(ngModel)]="numero_de_tarjeta" 
+            id="numero" 
+            placeholder="Número de tarjeta" 
+        >
+    </div>
+
+
+    <div  *ngIf='url == "/roles"' class="form-control">
+        <label for="descripcion"></label>
+        <input 
+            type="text" 
+            name="descripcion" 
+            [(ngModel)]="descripcion" 
+            id="day" 
+            placeholder="Descripción del rol" 
+        >
+    </div>
+    <div  *ngIf='url == "/cuentas"' class="form-control">
+        <label for="descripcion"></label>
+        <input 
+            type="text" 
+            name="descripcion" 
+            [(ngModel)]="descripcion" 
+            id="day" 
+            placeholder="Descripción del cuenta" 
+        >
+    </div>
+    <div *ngIf='url == "/clientes"'class="form-control">
+        <label for="cedula"></label>
+        <input
+            type="text"
+            name="cedula"
+            [(ngModel)]="cedula"
+            id="cedula"
+            placeholder="Número de cédula"
+        >
+    </div>
+    <div *ngIf='url == "/clientes"' class="form-control">
+        <label for="direccion"></label>
+        <input
+            type="text"
+            name="direccion"
+            [(ngModel)]="direccion"
+            id="direccion"
+            placeholder="Dirección del cliente"
+        >
+    </div>
+    <div *ngIf='url == "/clientes"' class="form-control">
+        <label for="telefono"></label>
+        <input
+            type="text"
+            name="telefono"
+            [(ngModel)]="telefonos"
+            id="telefono"
+            placeholder="Teléfono del cliente"
+        >
+    </div>
+    <div *ngIf='url == "/clientes"' class="form-control">
+        <label for="ingreso"></label>
+        <input
+            type="number"
+            name="ingreso"
+            [(ngModel)]="ingreso"
+            id="ingreso"
+            placeholder="Ingreso en colones del cliente"
+        >
+    </div>
+    <div *ngIf='url == "/clientes"' class="form-control">
+        <label for="tipo_de_cliente"></label>
+        <input
+            type="text"
+            name="tipo_de_cliente"
+            [(ngModel)]="tipo_de_cliente"
+            id="tipo_de_cliente"
+            placeholder="Tipo de cliente"
+        >
+    </div>
+    <div *ngIf='url == "/tarjetas"' class="form-control">
+        <label for="tipo_de_tarjeta"></label>
+        <input
+            type="text"
+            name="tipo_de_tarjeta"
+            [(ngModel)]="tipo_de_tarjeta"
+            id="tipo_de_tarjeta"
+            placeholder="Tipo de tarjeta"
+        >
+    </div>
+    <div *ngIf='url == "/clientes"' class="form-control">
+        <label for="username"></label>
+        <input
+            type="text"
+            name="username"
+            [(ngModel)]="username"
+            id="username"
+            placeholder="Nombre de usuario del cliente"
+        >
+    </div>
+    <div *ngIf='url == "/clientes"'class="form-control">
+        <label for="password"></label>
+        <input
+            type="text"
+            name="password"
+            [(ngModel)]="password"
+            id="username"
+            placeholder="Contraseña del cliente"
+        >
+    </div>
+    <div *ngIf='url == "/cuentas"' class="form-control">
+        <label for="moneda"></label>
+        <input
+            type="text"
+            name="moneda"
+            [(ngModel)]="moneda"
+            id="moneda"
+            placeholder="Moneda en la que se encuentra la cuenta"
+        >
+    </div>
+
+    <div *ngIf='url == "/cuentas"'class="form-control">
+        <label for="owner"></label>
+        <input
+            type="text"
+            name="owner"
+            [(ngModel)]="owner"
+            id="owner"
+            placeholder="Dueño de la cuenta"
+        >
+    </div>
+
+    <div *ngIf='url == "/cuentas"' class="form-control">
+        <label for="tipo"></label>
+        <input
+            type="text"
+            name="tipo"
+            [(ngModel)]="tipo_de_cuenta"
+            id="tipo"
+            placeholder="Tipo de cuenta"
+        >
+    </div>
+
+    <div *ngIf='url == "/cuentas"' class="form-control">
+        <label for="saldo"></label>
+        <input
+            type="number"
+            name="saldo"
+            [(ngModel)]="saldo"
+            id="saldo"
+            placeholder="Saldo de la cuenta"
+        >
+    </div>
+
+    <div *ngIf='url == "/tarjetas"'class="form-control">
+        <label for="expira"></label>
+        <input
+            type="date"
+            name="expira"
+            [(ngModel)]="expira"
+            id="expira"
+            placeholder="Fecha de expiración"
+        >
+    </div>
+    <div *ngIf='url == "/tarjetas"' class="form-control">
+        <label for="codigo"></label>
+        <input
+            type="number"
+            name="codigo"
+            [(ngModel)]="codigo"
+            id="codigo"
+            placeholder="Código de seguridad"
+        >
+    </div>
+    <div *ngIf='url == "/tarjetas"' class="form-control">
+        <label for="credito"></label>
+        <input
+            type="number"
+            name="credito"
+            [(ngModel)]="credito"
+            id="credito"
+            placeholder="Crédito o saldo disponibles"
+        >
+    </div>
+
+
+    <input type="submit" value="Enviar a la base de datos" class="btn btn-block">
+</form>
+
