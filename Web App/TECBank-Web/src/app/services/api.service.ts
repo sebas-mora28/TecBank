@@ -23,6 +23,7 @@ export class ApiService {
   private current_url: string;
   private item: any;
   current_item: any;
+  current_cedula: string;
 
   constructor(private http:HttpClient, private router:Router) { }
 
@@ -63,6 +64,15 @@ export class ApiService {
   get_tarjetas():Observable<Tarjeta[]>{
 
     return this.http.get<Tarjeta[]>(this.apiURL+"tarjeta");
+
+  }
+
+
+  get_client(cedula:string):Observable<Cliente>{
+    console.log(cedula);
+    const url = `${this.apiURL + "cliente" }/${cedula}`;
+    console.log(url)
+    return this.http.get<Cliente>(url)
 
   }
 

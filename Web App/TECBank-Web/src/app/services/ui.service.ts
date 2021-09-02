@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
+import { Cliente } from 'src/interfaces/Cliente';
+import { ApiService } from './api.service';
 
 @Injectable({
   providedIn: 'root'
@@ -41,5 +43,6 @@ export class UiService {
     this.edit.next(this.showEditItem);
 
   }
+
 
 }

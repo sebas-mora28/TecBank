@@ -1,6 +1,6 @@
 export interface Cliente{
     Nombre_Completo:string;
-    cedula:number;
+    cedula:string;
     Direccion:string;
     Telefonos:string[];
     Ingreso_Mensual:number;

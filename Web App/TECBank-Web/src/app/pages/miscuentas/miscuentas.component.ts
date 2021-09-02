@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-miscuentas',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MiscuentasComponent implements OnInit {
 
-  constructor() { }
+  nombre:string;
+  trans:boolean;
+  movs:boolean;
+
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
+
+    this.apiService.get_client(this.apiService.current_cedula).subscribe((c:any)=>{this.nombre = c.nombre_Completo});
+
+  }
+
+  show_trans(){
+    this.trans = !this.trans
+  }
+
+  show_movs(){
+    this.movs = !this.movs
   }
 
 }

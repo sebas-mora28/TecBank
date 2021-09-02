@@ -16,12 +16,12 @@
         "Saldo": 1000000,
         "Pagos": [
           {
-            "Id":1,
+            "Id": 1,
             "Monto": 5000,
             "Fecha": "29-Ago-2021 10:23:45"
           },
           {
-            "Id":2,
+            "Id": 2,
             "Monto": 15000,
             "Fecha": "29-Ago-2021 12:47:52"
           }
@@ -43,5 +43,18 @@
     "Prestamos": [],
     "Usuario": "jeykime",
     "Password": "abc"
+  },
+  {
+    "Nombre_Completo": "Jose Alejandro Chavarria",
+    "Cedula": "11819067306",
+    "Direccion": "Curridabat, San Jose",
+    "Telefonos": [
+      "70372813"
+    ],
+    "Ingreso_Mensual": 176000.0,
+    "Tipo_de_cliente": "fisico",
+    "Prestamos": [],
+    "Usuario": "jose",
+    "Password": "321"
   }
 ]

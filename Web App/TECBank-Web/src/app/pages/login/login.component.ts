@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Cliente} from '../../../interfaces/Cliente'
 import { Router, ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
+import { UiService } from 'src/app/services/ui.service';
 
 
 @Component({
@@ -14,8 +15,9 @@ export class LoginComponent implements OnInit {
   password: string;
   is_valid: Boolean;
   all_users: Cliente[];
+  cliente: Cliente;
 
-  constructor(private apiService: ApiService,private route: ActivatedRoute, private router: Router) { }
+  constructor(private apiService: ApiService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -44,6 +46,7 @@ export class LoginComponent implements OnInit {
     this.all_users.forEach((one_user) =>{
       if (user.username == one_user.usuario && user.password == one_user.password){
         this.is_valid = true;
+        this.apiService.current_cedula = one_user.cedula;
       }
     });
 
