@@ -1,0 +1,31 @@
+
+.home {
+    width: 100%;
+    height: 80%;
+    background-image: url(https://wallpaperaccess.com/full/153056.jpg);
+    background-position: center top;
+	background-size:cover;
+}
+
+.container {
+    background-color: #EBE9E9;
+    max-width: 500px;
+    margin: 30px auto;
+    overflow: auto;
+    min-height: 300px;
+    border: 1px solid steelblue;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.btn{
+    background-color: #FCB07E;
+    margin:0 auto;
+    display:block;
+    margin-top: 25px;
+}
+
+.img{
+    background-image: url(../../../logo.png);
+}
+

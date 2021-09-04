@@ -7,7 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoraComponent implements OnInit {
 
-  constructor() { }
+  title = 'reportviewerapp';
+  public serviceUrl: string;
+  public reportPath: string;
+
+  constructor() { 
+
+    this.serviceUrl = 'http://localhost:4200/api';
+    this.reportPath = '~/Resources/Report.rdl';
+
+  }
 
   ngOnInit(): void {
   }

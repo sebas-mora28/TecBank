@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
+import { BoldReportViewerModule} from '@boldreports/angular-reporting-components'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,13 @@ import { AddItemComponent } from './component/add-item/add-item.component';
 import { ButtonComponent } from './component/button/button.component';
 import { EditItemComponent } from './component/edit-item/edit-item.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+// Report viewer
+import '@boldreports/javascript-reporting-controls/Scripts/bold.report-viewer.min';
+
+// data-visualization
+import '@boldreports/javascript-reporting-controls/Scripts/data-visualization/ej.bulletgraph.min';
+import '@boldreports/javascript-reporting-controls/Scripts/data-visualization/ej.chart.min';
 
 @NgModule({
   declarations: [
@@ -54,7 +62,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    BoldReportViewerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

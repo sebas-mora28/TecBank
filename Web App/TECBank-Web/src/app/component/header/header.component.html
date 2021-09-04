@@ -1,15 +1,43 @@
-<ul *ngIf = "in_login('/login') && in_login('/about')">
-    <li><a routerLink="/login">General</a></li>
+<div class="topnav" *ngIf = "in_login('/login') && in_login('/about')">
 
-    <li *ngIf = "is_admin()"><a routerLink="/asesores">Asesores</a></li>
-    <li *ngIf = "is_admin()"><a routerLink="/clientes">Clientes</a></li>
-    <li *ngIf = "is_admin()"><a routerLink="/cuentas">Cuentas</a></li>
-    <li *ngIf = "is_admin()"><a routerLink="/roles">Roles</a></li>
-    <li *ngIf = "is_admin()"><a routerLink="/tarjetas">Tarjetas</a></li>
+    <img class="img" src="../../../logo.png">
 
-    <li *ngIf = "is_client()"><a routerLink="/miscuentas">Mis Cuentas</a></li>
-    <li *ngIf = "is_client()"><a routerLink="/mistarjetas">Mis Tarjetas</a></li>
-    <li *ngIf = "is_client()"><a routerLink="/misprestamos">Mis prestamos</a></li>
-    <li *ngIf = "is_client()"><a routerLink="/mora">Mora</a></li>
+    <a routerLink="/login">Login</a>
 
-</ul>
+    <a *ngIf = "is_admin() && notA" routerLink="/asesores">Asesores</a>
+    <a  class="active" *ngIf = "is_admin() && !notA" routerLink="/asesores">Asesores</a>
+
+    <a *ngIf = "is_admin() && notClts" routerLink="/clientes">Clientes</a>
+    <a class="active"  *ngIf = "is_admin() && !notClts" routerLink="/clientes">Clientes</a>
+
+    <a *ngIf = "is_admin() && notCts" routerLink="/cuentas">Cuentas</a>
+    <a class="active" *ngIf = "is_admin() && !notCts" routerLink="/cuentas">Cuentas</a>
+
+    <a *ngIf = "is_admin() && notRls" routerLink="/roles">Roles</a>
+    <a  class="active" *ngIf = "is_admin() && !notRls" routerLink="/roles">Roles</a>
+
+    <a *ngIf = "is_admin() && notTjts" routerLink="/tarjetas">Tarjetas</a>
+    <a class="active"  *ngIf = "is_admin() && !notTjts" routerLink="/tarjetas">Tarjetas</a>
+
+    <a *ngIf = "is_admin() && notPtms" routerLink="/prestamos">Préstamos</a>
+    <a class="active" *ngIf = "is_admin() && !notPtms" routerLink="/prestamos">Prestamos</a>
+
+
+
+    <a *ngIf = "is_client() && notMc" routerLink="/miscuentas">Mis Cuentas</a>
+    <a class="active" *ngIf = "is_client() && !notMc" routerLink="/miscuentas">Mis Cuentas</a>
+
+    <a *ngIf = "is_client()&& notMt" routerLink="/mistarjetas">Mis Tarjetas</a>
+    <a class="active" *ngIf = "is_client()&& !notMt" routerLink="/mistarjetas">Mis Tarjetas</a>
+
+    <a *ngIf = "is_client()&& notMp" routerLink="/misprestamos">Mis prestamos</a>
+    <a class="active"*ngIf = "is_client()&& !notMp" routerLink="/misprestamos">Mis prestamos</a>
+
+    <a *ngIf = "is_client()&& notM" routerLink="/mora">Mora</a>
+    <a class="active"*ngIf = "is_client()&& !notM" routerLink="/mora">Mora</a>
+
+
+    
+
+</div>
+    

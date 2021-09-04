@@ -29,4 +29,10 @@ admin + cualquier password para entrar a admin view
 Funcionalidad real en caso de cliente view (i.e: tiene que poner un user y password que esten en los json)
 
 
+/miscuentas 
+
+->Tiene un GET de un SOLO valor , para poner el nombre del cliente
+->lo demas es fachada, sin funcionalidad
+
+
 

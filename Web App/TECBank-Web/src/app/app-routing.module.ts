@@ -15,6 +15,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
+  {path: '', redirectTo: 'login', pathMatch: 'full' },
   {path: 'cuentas',component:CuentasComponent},
   {path: 'prestamos',component:PrestamosComponent},
   {path: 'roles',component:RolesComponent},

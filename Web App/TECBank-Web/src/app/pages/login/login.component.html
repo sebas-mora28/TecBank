@@ -1,17 +1,22 @@
-<div class="container">
-    <p style="text-align:center">Ingreso</p>
-
-    <form (ngSubmit)="onSubmit()">
-        <div class="login">
-            <label for="username">Cédula:</label>
-            <input type="text" id="username" name="username" [(ngModel)]="username">
-        </div>
-
-        <div class="login">
-            <label for="pass">Contraseña:</label>
-            <input type="password" id="pass" name="password" [(ngModel)]="password" >
-        </div>
-
-        <input type="submit" value="Ingresar">
-    </form>
+<div class="topnav">
+    <img class="img" src="../../../logo.png">
 </div>
+<section class="home">
+    <div class="container">
+        <h1 style="text-align:center">Ingreso</h1>
+
+        <form (ngSubmit)="onSubmit()">
+            <div class="login">
+                <label for="username">Nombre de usuario:</label>
+                <input type="text" id="username" name="username" [(ngModel)]="username">
+            </div>
+
+            <div class="login">
+                <label for="pass">Contraseña:</label>
+                <input type="password" id="pass" name="password" [(ngModel)]="password" >
+            </div>
+
+            <input class="btn" type="submit" value="Ingresar">
+        </form>
+    </div>
+</section>
