@@ -24,20 +24,10 @@ public class MenuClientFragment extends Fragment {
 
     private FragmentMenuClientBinding binding;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public MenuClientFragment() {
         // Required empty public constructor
     }
-
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,11 +40,14 @@ public class MenuClientFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentMenuClientBinding.inflate(inflater, container, false);
+        ((MainActivity) getActivity()).setTitle("Bievenido " + LoginFragment.userName);
+
         return binding.getRoot();
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
 
 
         binding.accountButton.setOnClickListener(new View.OnClickListener() {

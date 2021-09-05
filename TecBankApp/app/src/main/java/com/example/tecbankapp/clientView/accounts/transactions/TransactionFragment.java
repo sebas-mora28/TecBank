@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import com.example.tecbankapp.R;
 import com.example.tecbankapp.clientView.LoginFragment;
 import com.example.tecbankapp.databinding.FragmentTransactionBinding;
+import com.example.tecbankapp.menu.MainActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -63,6 +64,8 @@ public class TransactionFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        ((MainActivity) getActivity()).setTitle("Menu de cuentas");
 
         binding.movementsButton.setOnClickListener(new View.OnClickListener() {
             @Override

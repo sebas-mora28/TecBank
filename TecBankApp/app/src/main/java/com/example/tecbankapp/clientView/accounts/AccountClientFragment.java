@@ -24,6 +24,7 @@ import com.example.tecbankapp.clientView.LoginFragment;
 import com.example.tecbankapp.clientView.accounts.account.Account;
 import com.example.tecbankapp.clientView.accounts.account.AccountAdapter;
 import com.example.tecbankapp.databinding.FragmentAccountClientBinding;
+import com.example.tecbankapp.menu.MainActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,6 +42,7 @@ public class AccountClientFragment extends Fragment {
 
     private FragmentAccountClientBinding binding;
     private JSONArray accounts;
+    public static String currentAccout;
 
 
     public AccountClientFragment() {
@@ -56,8 +58,11 @@ public class AccountClientFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
         // Inflate the layout for this fragment
         binding = FragmentAccountClientBinding.inflate(inflater, container, false);
+        ((MainActivity) getActivity()).setTitle("Cuentas");
         getAccounts();
         return binding.getRoot();
     }
@@ -67,9 +72,14 @@ public class AccountClientFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
+
+
         binding.accountsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+
+                currentAccout =  ((Account) binding.accountsList.getItemAtPosition(i)).getNumberAccount();
 
 
                 NavHostFragment.findNavController(AccountClientFragment.this)
@@ -84,12 +94,13 @@ public class AccountClientFragment extends Fragment {
 
     public void getAccounts(){
         RequestQueue queue = Volley.newRequestQueue(getContext());
+        String url = String.format("http://10.0.2.2:5000/cuenta/cuentas/%s", LoginFragment.userID);
         JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
-                (Request.Method.GET, "https://tecbank.azurewebsites.net/cuenta/cuentas/604530340", null, new Response.Listener<JSONArray>() {
+
+                (Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
 
                     @Override
                     public void onResponse(JSONArray response) {
-                        System.out.println(response.toString());
                         ArrayList<Account> accounts = new ArrayList<>();
                         for(int i=0; i< response.length(); i++){
 

@@ -49,10 +49,14 @@ public class AccountAdapter extends ArrayAdapter<Account> {
 
         // then according to the position of the view assign the desired TextView 2 for the same
         TextView textView2 = currentItemView.findViewById(R.id.currency_text);
-        textView2.setText(currentNumberPosition.getCurrency());
+        textView2.setText("Moneda: " + currentNumberPosition.getCurrency());
 
         TextView textView3 = currentItemView.findViewById(R.id.type_text);
-        textView2.setText(currentNumberPosition.getType());
+        textView3.setText("Tipo: " + currentNumberPosition.getType());
+
+        TextView textView4 = currentItemView.findViewById(R.id.balance_text);
+        textView4.setText("Saldo:  " + currentNumberPosition.getBalance());
+
 
 
         // then return the recyclable view
