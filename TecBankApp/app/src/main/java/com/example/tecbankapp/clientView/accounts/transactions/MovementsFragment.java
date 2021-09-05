@@ -56,7 +56,7 @@ public class MovementsFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentMovementsBinding.inflate(inflater, container, false);
 
-        ((MainActivity) getActivity()).setTitle("Cuentas");
+        ((MainActivity) getActivity()).setTitle("Movimientos");
 
         return binding.getRoot();
     }
@@ -88,7 +88,7 @@ public class MovementsFragment extends Fragment {
 
                                 JSONObject current = response.getJSONObject(i);
 
-                                movements.add(String.format("Fecha: %s    Monto: %s \nTipo: %s", current.getString("fecha"), current.getString("monto"), current.getString("tipo")));
+                                movements.add(String.format("Fecha: %s \nTipo: %s       Monto: %s", current.getString("fecha"), current.getString("tipo"), current.getString("monto")));
 
 
 
