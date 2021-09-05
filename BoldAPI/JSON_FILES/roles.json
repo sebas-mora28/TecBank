@@ -1,0 +1,22 @@
+[
+  {
+    "Nombre": "Estafador",
+    "Descripcion": "Roba disimuladamente."
+  },
+  {
+    "Nombre": "Deudor",
+    "Descripcion": "Acredita la carrera."
+  },
+  {
+    "Nombre": "Chef",
+    "Descripcion": "Cocina."
+  },
+  {
+    "Nombre": "Policia",
+    "Descripcion": "Se queda mirando."
+  },
+  {
+    "Nombre": "Admin",
+    "Descripcion": "Adminitras todo."
+  }
+]

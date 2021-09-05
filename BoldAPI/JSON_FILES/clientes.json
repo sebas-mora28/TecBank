@@ -1,0 +1,60 @@
+[
+  {
+    "Nombre_Completo": "Adrian Araya Ramirez",
+    "Cedula": "604530340",
+    "Direccion": "San Vito, Coto Brus",
+    "Telefonos": [
+      "88393511"
+    ],
+    "Ingreso_Mensual": 50000000000.0,
+    "Tipo_de_cliente": "fisico",
+    "Prestamos": [
+      {
+        "Numero_de_prestamo": 1,
+        "Tasa_de_interes": 15.01,
+        "Monto_original": 500000000,
+        "Saldo": 1000000,
+        "Pagos": [
+          {
+            "Id": 1,
+            "Monto": 5000,
+            "Fecha": "29-Ago-2021 10:23:45"
+          },
+          {
+            "Id": 2,
+            "Monto": 15000,
+            "Fecha": "29-Ago-2021 12:47:52"
+          }
+        ]
+      }
+    ],
+    "Usuario": "adrian19921",
+    "Password": "123456"
+  },
+  {
+    "Nombre_Completo": "Shakime Richards Sparks",
+    "Cedula": "117920956",
+    "Direccion": "Guadalupe, San Jose",
+    "Telefonos": [
+      "72802533"
+    ],
+    "Ingreso_Mensual": 1500.0,
+    "Tipo_de_cliente": "fisico",
+    "Prestamos": [],
+    "Usuario": "jeykime",
+    "Password": "abc"
+  },
+  {
+    "Nombre_Completo": "Jose Alejandro Chavarria",
+    "Cedula": "11819067306",
+    "Direccion": "Curridabat, San Jose",
+    "Telefonos": [
+      "70372813"
+    ],
+    "Ingreso_Mensual": 176000.0,
+    "Tipo_de_cliente": "fisico",
+    "Prestamos": [],
+    "Usuario": "jose",
+    "Password": "321"
+  }
+]

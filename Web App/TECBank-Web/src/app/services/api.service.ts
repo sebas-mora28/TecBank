@@ -18,10 +18,6 @@ const httpOptions = {
 })
 export class ApiService {
   private apiURL = '/api/';
-  private newUser:Observable<Cliente[]>;
-  private roles:Observable<Cliente[]>;
-  private current_url: string;
-  private item: any;
   current_item: any;
   current_cedula: string;
 

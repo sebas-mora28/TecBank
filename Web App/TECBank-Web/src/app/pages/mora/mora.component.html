@@ -1,2 +1,9 @@
-<bold-reportviewer id="reportViewer_Control" [reportServiceUrl] = "serviceUrl" [reportPath] = "reportPath" style="width: 100%;height: 950px">
-</bold-reportviewer>
+<stimulsoft-viewer-angular
+
+    [requestUrl]="'http://localhost:4200/api/Viewer/{action}'"
+
+    [action]="'InitViewer'"
+
+    [height]="'1200px'"
+
+></stimulsoft-viewer-angular>

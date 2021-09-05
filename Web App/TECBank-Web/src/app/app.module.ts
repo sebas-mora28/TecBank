@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { BoldReportViewerModule} from '@boldreports/angular-reporting-components'
+import { StimulsoftViewerModule } from 'stimulsoft-viewer-angular';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -63,7 +65,9 @@ import '@boldreports/javascript-reporting-controls/Scripts/data-visualization/ej
     FormsModule,
     HttpClientModule,
     FontAwesomeModule,
-    BoldReportViewerModule
+    BoldReportViewerModule,
+    StimulsoftViewerModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

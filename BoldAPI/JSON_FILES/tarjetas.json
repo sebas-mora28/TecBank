@@ -1,0 +1,18 @@
+[
+  {
+    "Numero_de_tarjeta": "11-11-11",
+    "Fecha_de_expiracion": "11/02/2021",
+    "Codigo_de_Seguridad": "135",
+    "Tipo": "Debito",
+    "Saldo_o_Credito": 100000.0,
+    "Numero_Cuenta": "1234"
+  },
+  {
+    "Numero_de_tarjeta": "00-00",
+    "Fecha_de_expiracion": "11/10/2023",
+    "Codigo_de_Seguridad": "999",
+    "Tipo": "Credito",
+    "Saldo_o_Credito": -1000.0,
+    "Numero_Cuenta": "2100"
+  }
+]

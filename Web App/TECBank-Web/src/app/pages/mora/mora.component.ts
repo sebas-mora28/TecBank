@@ -13,8 +13,8 @@ export class MoraComponent implements OnInit {
 
   constructor() { 
 
-    this.serviceUrl = 'http://localhost:4200/api';
-    this.reportPath = '~/Resources/Report.rdl';
+    this.serviceUrl = 'http://localhost:4200/api/ReportViewer';
+    this.reportPath = '~/Resources/sales-order-detail.rdl';
 
   }
 

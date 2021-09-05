@@ -1,0 +1,82 @@
+[
+  {
+    "Numero_Cuenta": "1234",
+    "Descripcion": "MASTERCARD",
+    "Moneda": "Colones",
+    "Tipo": "Ahorros",
+    "Cedula_Propietario": "604530340",
+    "Saldo": 561560.0,
+    "Movimientos": [
+      {
+        "Fecha": "01-Sep-2021 07:37:47",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia a 2100"
+      },
+      {
+        "Fecha": "01-Sep-2021 07:39:39",
+        "Monto": 1560.0,
+        "Tipo": "Transferencia de 0110"
+      },
+      {
+        "Fecha": "01-Sep-2021 07:39:55",
+        "Monto": 49000.0,
+        "Tipo": "Transferencia a 0110"
+      }
+    ]
+  },
+  {
+    "Numero_Cuenta": "2100",
+    "Descripcion": "VISA",
+    "Moneda": "Dólares",
+    "Tipo": "Ahorros",
+    "Cedula_Propietario": "117920956",
+    "Saldo": 11425.0,
+    "Movimientos": [
+      {
+        "Fecha": "29-Ago-2021 12:49:04",
+        "Monto": 24.99,
+        "Tipo": "Retiro"
+      },
+      {
+        "Fecha": "01-Sep-2021 07:37:47",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia de 1234"
+      },
+      {
+        "Fecha": "01-Sep-2021 07:39:28",
+        "Monto": 1000.0,
+        "Tipo": "Transferencia de 0110"
+      }
+    ]
+  },
+  {
+    "Numero_Cuenta": "0110",
+    "Descripcion": "BCR",
+    "Moneda": "Colones",
+    "Tipo": "Corriente",
+    "Cedula_Propietario": "117920956",
+    "Saldo": 266440.0,
+    "Movimientos": [
+      {
+        "Fecha": "29-47-2021 12:47:52",
+        "Monto": 10000.0,
+        "Tipo": "Transferencia a 1234"
+      },
+      {
+        "Fecha": "01-Sep-2021 07:39:28",
+        "Monto": 1000.0,
+        "Tipo": "Transferencia a 2100"
+      },
+      {
+        "Fecha": "01-Sep-2021 07:39:39",
+        "Monto": 1560.0,
+        "Tipo": "Transferencia a 1234"
+      },
+      {
+        "Fecha": "01-Sep-2021 07:39:55",
+        "Monto": 49000.0,
+        "Tipo": "Transferencia de 1234"
+      }
+    ]
+  }
+]
