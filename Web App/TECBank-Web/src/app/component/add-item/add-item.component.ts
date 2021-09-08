@@ -1,14 +1,19 @@
 import { Component, OnInit, Output , EventEmitter,Input} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { UiService } from 'src/app/services/ui.service';
-import { Item } from 'src/interfaces/Item';
-import { Rol } from 'src/interfaces/Rol';
 
 @Component({
   selector: 'app-add-item',
   templateUrl: './add-item.component.html',
   styleUrls: ['./add-item.component.css']
 })
+
+
+/**
+ * Este componente se encarga de mostrar y recibir toda la informacion necesaria 
+ * para agragar una nueva entrada o editar alguno de los objetos de la base de datos
+ * muestra las barras para llenar la informacion y la emite al API para que sea manejada. 
+ */
 export class AddItemComponent implements OnInit {
   @Output() onAddItem: EventEmitter<any> = new EventEmitter();
   @Output() onEditItem: EventEmitter<any> = new EventEmitter();
@@ -60,6 +65,14 @@ export class AddItemComponent implements OnInit {
   }
 
 
+  /**
+   * Esta funcion se ejecuta cuando el boton de enviar a base de datos es oprimido
+   * envia la informacion que el usuario haya introducido, con el formato correcto dependiendo del
+   * url donde se encuentre
+   * 
+   * @returns Void
+   * 
+   */
   onSubmit(){
 
     switch (this.url) {

@@ -11,7 +11,6 @@ import { AsesoresComponent } from './pages/asesores/asesores.component';
 import { MisprestamosComponent } from './pages/misprestamos/misprestamos.component';
 import { MoraComponent } from './pages/mora/mora.component';
 import { TarjetasComponent } from './pages/tarjetas/tarjetas.component';
-import { AboutComponent } from './pages/about/about.component';
 import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
@@ -26,7 +25,6 @@ const routes: Routes = [
   {path: 'misprestamos',component:MisprestamosComponent},
   {path: 'mora',component:MoraComponent},
   {path: 'tarjetas',component:TarjetasComponent},
-  {path: 'about',component:AboutComponent},
   {path: 'login',component:LoginComponent}
 ];
 

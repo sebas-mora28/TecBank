@@ -5,6 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './tarjetas.component.html',
   styleUrls: ['./tarjetas.component.css']
 })
+
+/**
+ * Pagina de tarjetas (/tarjetas)
+ */
+
 export class TarjetasComponent implements OnInit {
 
   constructor() { }

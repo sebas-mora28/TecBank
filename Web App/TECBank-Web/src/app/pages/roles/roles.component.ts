@@ -5,6 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './roles.component.html',
   styleUrls: ['./roles.component.css']
 })
+
+/**
+ * Pagina de roles (/roles)
+ */
+
 export class RolesComponent implements OnInit {
 
   constructor() { }

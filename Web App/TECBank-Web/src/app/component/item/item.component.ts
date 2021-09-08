@@ -7,6 +7,12 @@ import {Router} from '@angular/router';
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.css']
 })
+
+/**
+ * Este componente es una abstraccion de un item de la base de datos, posee todos los 
+ * atributos posibles para los objetos de la base de datos y los muestra segun 
+ * el url donde se encuentre el usuario
+ */
 export class ItemComponent implements OnInit {
   @Input() item: any;
   @Output() onEditItem: EventEmitter<any> = new EventEmitter()
@@ -45,6 +51,10 @@ export class ItemComponent implements OnInit {
 
   }
 
+  /**
+   * Esta funcion se ejecuta cuando a un item especifico se le selecciona la opcion de edicion
+   * @param item Emite el item que se esta editando
+   */
   onEdit(item:any){
     this.onEditItem.emit(item)
   }

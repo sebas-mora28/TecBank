@@ -6,6 +6,11 @@ import {Router} from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
+
+/**
+ * Este componente se encarga de la navegacion dentro de la pagina web
+ * cambia botones segun el url donde el usuario se encuentre
+ */
 export class HeaderComponent implements OnInit {
 
   url:string;
@@ -25,11 +30,22 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Esta funcion indica si se esta en login
+   * @param route un string con el url
+   * @returns booleano
+   */
   in_login(route:string){
     return this.router.url != route;
   }
 
 
+  /**
+   * Esta funcion indica si el usuario esta o no en alguno de los
+   * urls asociados a un cliente. Ademas modifica los parametros para
+   * manejar el color de los botones en el header
+   * @returns boolean
+   */
   is_client():boolean{
     this.url = this.router.url;
     if (this.url == "/miscuentas"){

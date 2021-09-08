@@ -5,6 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './cuentas.component.html',
   styleUrls: ['./cuentas.component.css']
 })
+
+/**
+ * Pagina de cuentas (/cuentas)
+ */
 export class CuentasComponent implements OnInit {
 
   constructor() { }

@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente} from '../../../interfaces/Cliente'
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router} from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
-import { UiService } from 'src/app/services/ui.service';
-
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
+/**
+ * Esta pagina se encarga del login del usurio
+ */
 export class LoginComponent implements OnInit {
   username: string;
   password: string;
@@ -27,6 +29,13 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  /**
+   * Esta funcion valida si las entradas del usuario conciden con alguno de los metodos
+   * de acceso a la pagina y redirecciona de manera acorde. Si el usuario ingresa un nombre de usuario 
+   * y contraseña que se encuentren en la base de datos le ingresa como cliente. Si el usuario es admin
+   * le redirecciona al la pagina de administrador
+   * @returns void
+   */
   onSubmit(): void {
 
     if(!this.username){

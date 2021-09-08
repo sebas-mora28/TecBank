@@ -18,7 +18,6 @@ import { AsesoresComponent } from './pages/asesores/asesores.component';
 import { MisprestamosComponent } from './pages/misprestamos/misprestamos.component';
 import { MoraComponent } from './pages/mora/mora.component';
 import { TarjetasComponent } from './pages/tarjetas/tarjetas.component';
-import { AboutComponent } from './pages/about/about.component';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -26,15 +25,8 @@ import { ItemHolderComponent } from './component/item-holder/item-holder.compone
 import { ItemComponent } from './component/item/item.component';
 import { AddItemComponent } from './component/add-item/add-item.component';
 import { ButtonComponent } from './component/button/button.component';
-import { EditItemComponent } from './component/edit-item/edit-item.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-// Report viewer
-import '@boldreports/javascript-reporting-controls/Scripts/bold.report-viewer.min';
-
-// data-visualization
-import '@boldreports/javascript-reporting-controls/Scripts/data-visualization/ej.bulletgraph.min';
-import '@boldreports/javascript-reporting-controls/Scripts/data-visualization/ej.chart.min';
 
 @NgModule({
   declarations: [
@@ -49,7 +41,6 @@ import '@boldreports/javascript-reporting-controls/Scripts/data-visualization/ej
     MisprestamosComponent,
     MoraComponent,
     TarjetasComponent,
-    AboutComponent,
     HeaderComponent,
     FooterComponent,
     LoginComponent,
@@ -57,7 +48,6 @@ import '@boldreports/javascript-reporting-controls/Scripts/data-visualization/ej
     ItemComponent,
     AddItemComponent,
     ButtonComponent,
-    EditItemComponent
   ],
   imports: [
     BrowserModule,

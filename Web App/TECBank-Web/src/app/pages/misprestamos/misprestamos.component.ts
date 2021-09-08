@@ -5,6 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './misprestamos.component.html',
   styleUrls: ['./misprestamos.component.css']
 })
+
+/**
+ * Pagina de prestamos no implementada (/asesores)
+ */
 export class MisprestamosComponent implements OnInit {
 
   constructor() { }

@@ -10,6 +10,12 @@ import { Subscription } from 'rxjs';
   templateUrl: './item-holder.component.html',
   styleUrls: ['./item-holder.component.css']
 })
+
+/**
+ * Este componente esta diseñado especificamente para mostrar una serie de items abstraidos
+ * cuenta con las funciones necesarias para editar, agregar o eliminar segun los items emitan
+ * o sus propios componentes registren la interaccion del usuario (boton)
+ */
 export class ItemHolderComponent implements OnInit {
 
   titulo:String;
@@ -52,14 +58,26 @@ export class ItemHolderComponent implements OnInit {
     }
   }
 
+  /**
+   * accede al servicio de UI cuando un item se quiere agregar o editar
+   * esto con el fin de mostar el componente de add-item
+   */
   toggleAddItem(){
     this.uiService.toggleAddItem();
   }
 
+  /**
+   * En via al API la accion de post con un item desconocido y lo agrega a la interfaz de ser exitosa la peticion
+   * @param item recibe un item cualquiera para enviar al API
+   */
   add_item(item:any){
     this.apiService.post(item).subscribe((i: any)=> (this.items.push(i)));
   }
 
+  /**
+   * funcion que se ejecuta al seleccionar la edicion de un item
+   * @param item el item seleccionado
+   */
   editItemClicked(item:any){
     this.uiService.toggleEditItem();
     this.apiService.editing(item);
@@ -69,10 +87,18 @@ export class ItemHolderComponent implements OnInit {
     this.current_item_number_t = item.numero_de_tarjeta;
   }
 
+  /**
+   * esconde la barra de edicion de item
+   */
   cancelEditItem(){
     this.uiService.cancelEdit();
   }
 
+  /**
+   * Funcion que envia al API la peticion de put para un item. La funcion es llamada
+   * con un diferente atributo dependiendo el url del usuario y la llave primaria del objeto
+   * @param item El item a editar
+   */
   edit_item(item:any){
 
     switch (this.router.url) {
@@ -111,6 +137,10 @@ export class ItemHolderComponent implements OnInit {
     
   }
 
+  /**
+   * Funcion que envia al API la peticion de delete para un item. La funcion es llamada
+   * con un diferente atributo dependiendo el url del usuario y la llave primaria del objeto
+   */
   deleteItem(){
     this.uiService.cancelEdit();
 
