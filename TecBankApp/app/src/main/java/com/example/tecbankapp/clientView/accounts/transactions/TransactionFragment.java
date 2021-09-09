@@ -62,11 +62,22 @@ public class TransactionFragment extends Fragment {
     }
 
 
+
+    /**
+     * Se establece la funcionalidad de la vista despues de ser creada
+     * @param view
+     * @param savedInstanceState
+     */
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         ((MainActivity) getActivity()).setTitle("Menu de cuentas");
 
+
+        /**
+         * Se encarga de dar funcionalidad al boton para observar los movimientos asocidos a
+         * una cuenta
+         */
         binding.movementsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,7 +88,10 @@ public class TransactionFragment extends Fragment {
         });
 
 
-
+        /**
+         * Se encarga de dar funcionalidad al boton para observar las tarjetas asocidos a
+         * una cuenta
+         */
         binding.cardsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

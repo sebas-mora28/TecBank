@@ -30,7 +30,7 @@ import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * create an instance of this fragment.
+ * Fragmento que representa la vista de las tarjeras asociadas a una cuenta
  */
 public class CardsFragment extends Fragment {
 
@@ -57,13 +57,21 @@ public class CardsFragment extends Fragment {
         return binding.getRoot();
     }
 
+
+    /**
+     * Se establece la funcionalidad de la vista despues de ser creada
+     * @param view
+     * @param savedInstanceState
+     */
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
 
-
-
+        /**
+         * Se realiza la consulta para obtener las tarjetas asociadas a una cuenta. Constiste en un get que
+         * devuelve un array con la informacion de las tarjetas y las visualiza
+         */
         RequestQueue queue = Volley.newRequestQueue(getContext());
         String url = String.format("http://10.0.2.2:5000/tarjeta/tarjetas/%s", AccountClientFragment.currentAccout);
             JsonArrayRequest jsonObjectRequest = new JsonArrayRequest

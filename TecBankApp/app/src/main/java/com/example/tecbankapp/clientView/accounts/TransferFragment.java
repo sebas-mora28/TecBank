@@ -39,7 +39,7 @@ import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
- * create an instance of this fragment.
+ * Fragmento que representa la vista para realizar transferencias.
  */
 public class TransferFragment extends Fragment {
 
@@ -57,6 +57,8 @@ public class TransferFragment extends Fragment {
 
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -68,6 +70,12 @@ public class TransferFragment extends Fragment {
         return binding.getRoot();
     }
 
+
+    /**
+     * Se establece la funcionalidad de la vista despues de ser creada
+     * @param view
+     * @param savedInstanceState
+     */
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -81,6 +89,10 @@ public class TransferFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
+
+                /**
+                 * Se establece la funcionalidad del menu que permite elegir los numeros de cuenta del cliente
+                 */
                 binding.debitAccountOption.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -99,6 +111,11 @@ public class TransferFragment extends Fragment {
                     return;
 
                 }
+
+                /**
+                 * Se realiza la consulta para para realizar la transferencia. Consiste en un POST
+                 * donde se envia la informacion de la transferencia.
+                 */
 
                 try {
                     RequestQueue requestQueue = Volley.newRequestQueue(getContext());
@@ -151,7 +168,10 @@ public class TransferFragment extends Fragment {
     }
 
 
-
+    /**
+     * Metodo que se encarga de realizar una consulta para obtener las cuentas asociadas al cliente
+     * para que sean visualizadas en pantalla.
+     */
     public void getAccounts(){
 
         RequestQueue queue = Volley.newRequestQueue(getContext());

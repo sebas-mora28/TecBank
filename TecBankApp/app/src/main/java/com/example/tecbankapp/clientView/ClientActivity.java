@@ -16,6 +16,10 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.tecbankapp.databinding.ActivityClientBinding;
 
+
+/**
+ *
+ */
 public class ClientActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;

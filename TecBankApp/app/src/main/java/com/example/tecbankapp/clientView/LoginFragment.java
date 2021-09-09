@@ -79,20 +79,27 @@ public class LoginFragment extends Fragment {
         return binding.getRoot();
     }
 
+
+    /**
+     * Funcion que se llama despues de que el fragmento es creado
+     * @param view
+     * @param savedInstanceState
+     */
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
 
-
-
-
+        /**
+         * Se establece el listener para el boton de login
+         */
         binding.enterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+
+
                 String user = binding.editTextTextUser.getText().toString();
                 String password = binding.editTextTextPassword.getText().toString();
-
 
                 try {
                     RequestQueue requestQueue = Volley.newRequestQueue(getContext());
@@ -103,6 +110,11 @@ public class LoginFragment extends Fragment {
                     jsonBody.put("Password", password);
                     final String requestBody = jsonBody.toString();
 
+
+                    /**
+                     * Se realiza la consulta del login, se verifican que los datos ingresados existen en la bases de datos y se encuentras correctos.
+                     * En caso que los datos no sean validos, se lanza un mensaje indicandolo.
+                     */
                     StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
@@ -156,71 +168,7 @@ public class LoginFragment extends Fragment {
                     e.printStackTrace();
                 }
 
-
-
-                /**
-                RequestQueue queue = Volley.newRequestQueue(getContext());
-                JsonArrayRequest jsonArrayRequest = new JsonArrayRequest
-                        (Request.Method.GET, "http://10.0.2.2:5000/cliente/", null, new Response.Listener<JSONArray>() {
-                            @Override
-                            public void onResponse(JSONArray response) {
-
-                                for(int i=0; i < response.length(); i++){
-
-                                    try {
-                                        JSONObject currentClient = response.getJSONObject(i);;
-                                        System.out.println(currentClient.toString());
-
-                                        String currentUser = currentClient.getString("usuario");
-                                        String currentPassword = currentClient.getString("password");
-
-
-                                        if (user.equals(currentUser) && password.equals(currentPassword)) {
-
-                                            userID = currentClient.getString("cedula");
-                                            userName = currentClient.getString("nombre_Completo").split(" ")[0];
-
-                                            NavHostFragment.findNavController(LoginFragment.this)
-                                                    .navigate(R.id.action_loginFragment_to_menuClientFragment);
-
-                                            return;
-                                        }
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                    }
-                                }
-
-                                Toast.makeText(getContext(), "Usuario o contraseña inválidos", Toast.LENGTH_LONG).show();
-
-
-                            }
-                        }, new Response.ErrorListener() {
-
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                System.out.println(error);
-
-                            }
-
-                        });
-
-
-
-
-                queue.add(jsonArrayRequest);
-
-                 **/
-
-
-
-
-
-
             }
-
-
-
-
 
         });
 

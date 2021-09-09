@@ -2,6 +2,11 @@ package com.example.tecbankapp.clientView.accounts.account;
 
 import org.json.JSONArray;
 
+
+/**
+ * Clase que representa una cuenta de un cliente. Contiene la informacion que compone una cuenta
+ * como el tipo , balance, moneda, numero de cuenta.
+ */
 public class Account {
 
     private String numberAccount;
@@ -13,6 +18,15 @@ public class Account {
     private JSONArray movements;
 
 
+    /**
+     * Constructor de la clase
+     * @param numberAccount
+     * @param description
+     * @param currency
+     * @param type
+     * @param ownerID
+     * @param balance
+     */
     public Account(String numberAccount, String description, String currency, String type, String ownerID, String balance) {
         this.numberAccount = numberAccount;
         this.description = description;

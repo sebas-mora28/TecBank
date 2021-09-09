@@ -35,7 +35,7 @@ import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * create an instance of this fragment.
+ * Fragmento que representa la vista donde se visualuiza la lista de clientes.
  */
 public class AccountClientFragment extends Fragment {
 
@@ -55,6 +55,8 @@ public class AccountClientFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -68,12 +70,19 @@ public class AccountClientFragment extends Fragment {
     }
 
 
+    /**
+     * Se establece la funcionalidad de la vista despues de ser creada
+     * @param view
+     * @param savedInstanceState
+     */
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
 
-
-
+        /**
+         * Se da la funcionalidad a la lista de cuentas, cuando uno de los item de la lista es presionado
+         * se ingresa al menu de cada cuenta
+         */
         binding.accountsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -92,6 +101,10 @@ public class AccountClientFragment extends Fragment {
 
     }
 
+    /**
+     * Metodo que se encarga de realizar una consulta de las cuentas asociadas al cliente para
+     * mostrarlas en la vista
+     */
     public void getAccounts(){
         RequestQueue queue = Volley.newRequestQueue(getContext());
         String url = String.format("http://10.0.2.2:5000/cuenta/cuentas/%s", LoginFragment.userID);

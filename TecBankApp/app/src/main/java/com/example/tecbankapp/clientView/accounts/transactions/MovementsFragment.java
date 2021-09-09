@@ -32,7 +32,7 @@ import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * create an instance of this fragment.
+ * Fragmento que representa la vista de los movimientos de una cuenta
  */
 public class MovementsFragment extends Fragment {
 
@@ -61,11 +61,21 @@ public class MovementsFragment extends Fragment {
         return binding.getRoot();
     }
 
+
+    /**
+     * Se establece la funcionalidad de la vista despues de ser creada
+     * @param view
+     * @param savedInstanceState
+     */
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
 
+        /**
+         * Se realiza la consulta para obtener los movimientos asociados a una cuenta. Consiste un GET
+         * que devuelve un array asociado a la cuenta especificada
+         */
         RequestQueue queue = Volley.newRequestQueue(getContext());
         String url = String.format("http://10.0.2.2:5000/cuenta/%s/mv", AccountClientFragment.currentAccout);
         JsonArrayRequest jsonObjectRequest = new JsonArrayRequest

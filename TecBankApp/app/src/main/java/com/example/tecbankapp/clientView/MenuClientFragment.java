@@ -18,7 +18,7 @@ import com.example.tecbankapp.menu.MainActivity;
 
 /**
  * A simple {@link Fragment} subclass.
- * create an instance of this fragment.
+ * Fragmento donde se encuentra la vista del menu del cliente.
  */
 public class MenuClientFragment extends Fragment {
 
@@ -35,6 +35,13 @@ public class MenuClientFragment extends Fragment {
 
     }
 
+    /**
+     * Se establece la funcionalidad de la vista al momento de ser creada
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -45,11 +52,19 @@ public class MenuClientFragment extends Fragment {
         return binding.getRoot();
     }
 
+    /**
+     * Se establece la funcionalidad de la vista despues de ser creada
+     * @param view
+     * @param savedInstanceState
+     */
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
 
-
+        /**
+         * Se establece la funcionalidad del boton para ingresar la informacion de las cuentas
+         * asociadas al cliente
+         */
         binding.accountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,6 +73,9 @@ public class MenuClientFragment extends Fragment {
             }
         });
 
+        /**
+         * Se establece la funcionalidad del boton para ingresar a la opcion de transferencias
+         */
         binding.transfersButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,7 +85,9 @@ public class MenuClientFragment extends Fragment {
             }
         });
 
-
+        /**
+         * Se establece la funcionalidad del boton para regresar a la vista anterio
+         */
         binding.backClientButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
