@@ -27,6 +27,8 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.tecbankapp.R;
+import com.example.tecbankapp.clientView.accounts.account.Account;
+import com.example.tecbankapp.clientView.accounts.account.AccountAdapter;
 import com.example.tecbankapp.databinding.FragmentLoginBinding;
 import com.example.tecbankapp.menu.MainActivity;
 
@@ -97,14 +99,16 @@ public class LoginFragment extends Fragment {
             public void onClick(View view) {
 
 
+                xd();
+
+
 
                 String user = binding.editTextTextUser.getText().toString();
                 String password = binding.editTextTextPassword.getText().toString();
 
                 try {
                     RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-                    String url = "http://10.0.2.2:5000/cliente/login";
-                    //String url = String.format("http://10.0.2.2:3000/users");
+                    String url = "http://10.0.2.2:44904/cliente/login";
                     JSONObject jsonBody = new JSONObject();
                     jsonBody.put("Usuario", user);
                     jsonBody.put("Password", password);
@@ -121,9 +125,9 @@ public class LoginFragment extends Fragment {
 
                             try {
                                 JSONObject userInfo = new JSONObject(response);
-                                System.out.println(userInfo.toString());
                                 userID = userInfo.getString("Cedula");
                                 userName = userInfo.getString("Nombre_Completo").split(" ")[0];
+                                System.out.println(userID);;
 
                                 NavHostFragment.findNavController(LoginFragment.this)
                                         .navigate(R.id.action_loginFragment_to_menuClientFragment);
@@ -172,6 +176,37 @@ public class LoginFragment extends Fragment {
 
         });
 
+    }
+
+
+    public void xd()
+    {
+        RequestQueue queue = Volley.newRequestQueue(getContext());
+        String url = "http://10.0.2.2:44904/cuenta";
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
+
+                (Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        System.out.println(response);
+
+
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        System.out.println(error.toString());
+                        System.out.println(error.getMessage());
+
+                    }
+
+                });
+
+
+
+        queue.add(jsonObjectRequest);
     }
 
 

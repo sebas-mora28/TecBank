@@ -77,7 +77,7 @@ public class MovementsFragment extends Fragment {
          * que devuelve un array asociado a la cuenta especificada
          */
         RequestQueue queue = Volley.newRequestQueue(getContext());
-        String url = String.format("http://10.0.2.2:5000/cuenta/%s/mv", AccountClientFragment.currentAccout);
+        String url = String.format("http://10.0.2.2:44904/cuenta/%s/mv", AccountClientFragment.currentAccout);
         JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
 

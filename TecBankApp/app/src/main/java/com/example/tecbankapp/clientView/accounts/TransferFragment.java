@@ -93,24 +93,7 @@ public class TransferFragment extends Fragment {
                 /**
                  * Se establece la funcionalidad del menu que permite elegir los numeros de cuenta del cliente
                  */
-                binding.debitAccountOption.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                        accountSelected[0] = binding.debitAccountOption.getItemAtPosition(i).toString();
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> adapterView) {
-
-                    }
-                });
-
-
-                if (accountSelected[0] == ""){
-                    Toast.makeText(getContext(), "Seleccione una cuenta", Toast.LENGTH_LONG);
-                    return;
-
-                }
+                String accountSelected = binding.debitAccountOption.getSelectedItem().toString();
 
                 /**
                  * Se realiza la consulta para para realizar la transferencia. Consiste en un POST
@@ -119,12 +102,13 @@ public class TransferFragment extends Fragment {
 
                 try {
                     RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-                    String url = String.format("http://10.0.2.2:5000/cuenta/%s=tr", accountSelected[0]);
-                    //String url = String.format("http://10.0.2.2:3000/users");
+                    String url = String.format("http://10.0.2.2:44904/cuenta/%s=tr", accountSelected);
                     JSONObject jsonBody = new JSONObject();
-                    jsonBody.put("receptor", "1234");
-                    jsonBody.put("monto", "10000");
+                    jsonBody.put("receptor", binding.editTextNumber2.getText());
+                    jsonBody.put("monto", Integer.parseInt(String.valueOf(binding.editTextNumber3.getText())));
                     final String requestBody = jsonBody.toString();
+
+                    System.out.println(requestBody);
 
                     StringRequest stringRequest = new StringRequest(Request.Method.PUT, url, new Response.Listener<String>() {
                         @Override
@@ -135,6 +119,7 @@ public class TransferFragment extends Fragment {
                         @Override
                         public void onErrorResponse(VolleyError error) {
                             System.out.println(error.toString());
+                            Toast.makeText(getContext(), "La transaccion no pudo ser realizada", Toast.LENGTH_SHORT).show();
                         }
                     }) {
 
@@ -175,7 +160,7 @@ public class TransferFragment extends Fragment {
     public void getAccounts(){
 
         RequestQueue queue = Volley.newRequestQueue(getContext());
-        String url = String.format("http://10.0.2.2:5000/cuenta/cuentas/%s", LoginFragment.userID);
+        String url = String.format("http://10.0.2.2:44904/cuenta/cuentas/%s", LoginFragment.userID);
         System.out.println(url);
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONArray>() {

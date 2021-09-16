@@ -56,5 +56,31 @@
     "Prestamos": [],
     "Usuario": "jose",
     "Password": "321"
+  },
+  {
+    "Nombre_Completo": "Sebastian Mora Godinez",
+    "Cedula": "11111111",
+    "Direccion": "400 m sur de la Escuela Villa Ligia",
+    "Telefonos": [
+      "83200846"
+    ],
+    "Ingreso_Mensual": 30000000.0,
+    "Tipo_de_cliente": "Físico",
+    "Prestamos": [],
+    "Usuario": "semora",
+    "Password": "semora"
+  },
+  {
+    "Nombre_Completo": "Marco Rivera Meneses",
+    "Cedula": "1888555",
+    "Direccion": "Cartago",
+    "Telefonos": [
+      "82828282"
+    ],
+    "Ingreso_Mensual": 500000.0,
+    "Tipo_de_cliente": "Físico",
+    "Prestamos": [],
+    "Usuario": "mrivera",
+    "Password": "mrivera"
   }
 ]

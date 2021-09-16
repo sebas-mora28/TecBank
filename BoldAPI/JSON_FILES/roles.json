@@ -1,9 +1,5 @@
 [
   {
-    "Nombre": "Estafador",
-    "Descripcion": "Roba disimuladamente."
-  },
-  {
     "Nombre": "Deudor",
     "Descripcion": "Acredita la carrera."
   },
@@ -18,5 +14,9 @@
   {
     "Nombre": "Admin",
     "Descripcion": "Adminitras todo."
+  },
+  {
+    "Nombre": "Cajero",
+    "Descripcion": "Persona encargada de atender a los clientas"
   }
 ]

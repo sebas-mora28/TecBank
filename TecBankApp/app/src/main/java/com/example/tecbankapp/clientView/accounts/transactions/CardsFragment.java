@@ -73,7 +73,7 @@ public class CardsFragment extends Fragment {
          * devuelve un array con la informacion de las tarjetas y las visualiza
          */
         RequestQueue queue = Volley.newRequestQueue(getContext());
-        String url = String.format("http://10.0.2.2:5000/tarjeta/tarjetas/%s", AccountClientFragment.currentAccout);
+        String url = String.format("http://10.0.2.2:44904/tarjeta/tarjetas/%s", AccountClientFragment.currentAccout);
             JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
 

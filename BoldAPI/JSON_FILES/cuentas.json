@@ -30,7 +30,7 @@
     "Moneda": "Dólares",
     "Tipo": "Ahorros",
     "Cedula_Propietario": "117920956",
-    "Saldo": 11425.0,
+    "Saldo": 261225.0,
     "Movimientos": [
       {
         "Fecha": "29-Ago-2021 12:49:04",
@@ -46,6 +46,21 @@
         "Fecha": "01-Sep-2021 07:39:28",
         "Monto": 1000.0,
         "Tipo": "Transferencia de 0110"
+      },
+      {
+        "Fecha": "15-sep.-2021 08:05:50",
+        "Monto": 100.0,
+        "Tipo": "Transferencia a 112233"
+      },
+      {
+        "Fecha": "15-sep.-2021 08:07:50",
+        "Monto": 100.0,
+        "Tipo": "Transferencia a 112233"
+      },
+      {
+        "Fecha": "15-sep.-2021 01:53:59",
+        "Monto": 250000.0,
+        "Tipo": "Transferencia de 444444"
       }
     ]
   },
@@ -55,7 +70,7 @@
     "Moneda": "Colones",
     "Tipo": "Corriente",
     "Cedula_Propietario": "117920956",
-    "Saldo": 266440.0,
+    "Saldo": 148840.0,
     "Movimientos": [
       {
         "Fecha": "29-47-2021 12:47:52",
@@ -76,6 +91,111 @@
         "Fecha": "01-Sep-2021 07:39:55",
         "Monto": 49000.0,
         "Tipo": "Transferencia de 1234"
+      },
+      {
+        "Fecha": "15-sep.-2021 04:20:33",
+        "Monto": 23500.0,
+        "Tipo": "Transferencia a 28052000"
+      },
+      {
+        "Fecha": "15-sep.-2021 04:27:00",
+        "Monto": 23500.0,
+        "Tipo": "Transferencia a 28052000"
+      },
+      {
+        "Fecha": "15-sep.-2021 04:27:21",
+        "Monto": 23500.0,
+        "Tipo": "Transferencia a 28052000"
+      },
+      {
+        "Fecha": "15-sep.-2021 07:53:37",
+        "Monto": 23500.0,
+        "Tipo": "Transferencia a 112233"
+      },
+      {
+        "Fecha": "15-sep.-2021 07:53:45",
+        "Monto": 23500.0,
+        "Tipo": "Transferencia a 112233"
+      },
+      {
+        "Fecha": "15-sep.-2021 08:05:42",
+        "Monto": 100.0,
+        "Tipo": "Transferencia a 112233"
+      }
+    ]
+  },
+  {
+    "Numero_Cuenta": "28052000",
+    "Descripcion": "Cuenta de prueba",
+    "Moneda": "Colones",
+    "Tipo": "Corriente",
+    "Cedula_Propietario": "11111111",
+    "Saldo": 1070500.0,
+    "Movimientos": [
+      {
+        "Fecha": "15-sep.-2021 04:20:33",
+        "Monto": 23500.0,
+        "Tipo": "Transferencia de 0110"
+      },
+      {
+        "Fecha": "15-sep.-2021 04:27:00",
+        "Monto": 23500.0,
+        "Tipo": "Transferencia de 0110"
+      },
+      {
+        "Fecha": "15-sep.-2021 04:27:21",
+        "Monto": 23500.0,
+        "Tipo": "Transferencia de 0110"
+      }
+    ]
+  },
+  {
+    "Numero_Cuenta": "112233",
+    "Descripcion": "Cuenta de prueba",
+    "Moneda": "Colones",
+    "Tipo": "Ahorros",
+    "Cedula_Propietario": "1888555",
+    "Saldo": 322300.0,
+    "Movimientos": [
+      {
+        "Fecha": "15-sep.-2021 07:53:37",
+        "Monto": 23500.0,
+        "Tipo": "Transferencia de 0110"
+      },
+      {
+        "Fecha": "15-sep.-2021 07:53:45",
+        "Monto": 23500.0,
+        "Tipo": "Transferencia de 0110"
+      },
+      {
+        "Fecha": "15-sep.-2021 08:05:42",
+        "Monto": 100.0,
+        "Tipo": "Transferencia de 0110"
+      },
+      {
+        "Fecha": "15-sep.-2021 08:05:50",
+        "Monto": 100.0,
+        "Tipo": "Transferencia de 2100"
+      },
+      {
+        "Fecha": "15-sep.-2021 08:07:50",
+        "Monto": 100.0,
+        "Tipo": "Transferencia de 2100"
+      }
+    ]
+  },
+  {
+    "Numero_Cuenta": "444444",
+    "Descripcion": "Cuenta de prueba",
+    "Moneda": "Colones",
+    "Tipo": "Ahorros",
+    "Cedula_Propietario": "117920956",
+    "Saldo": 1750000.0,
+    "Movimientos": [
+      {
+        "Fecha": "15-sep.-2021 01:53:59",
+        "Monto": 250000.0,
+        "Tipo": "Transferencia a 2100"
       }
     ]
   }

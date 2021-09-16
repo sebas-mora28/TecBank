@@ -107,7 +107,7 @@ public class AccountClientFragment extends Fragment {
      */
     public void getAccounts(){
         RequestQueue queue = Volley.newRequestQueue(getContext());
-        String url = String.format("http://10.0.2.2:5000/cuenta/cuentas/%s", LoginFragment.userID);
+        String url = String.format("http://10.0.2.2:44904/cuenta/cuentas/%s", LoginFragment.userID);
         JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
 
                 (Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
